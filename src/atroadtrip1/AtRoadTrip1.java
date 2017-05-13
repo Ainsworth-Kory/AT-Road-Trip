@@ -6,10 +6,17 @@
 package atroadtrip1;
 
 import byui.cit260.atRoadTrip1.model.Actor;
+import byui.cit260.atRoadTrip1.model.Car;
+import byui.cit260.atRoadTrip1.model.Day;
+import byui.cit260.atRoadTrip1.model.Food;
 import byui.cit260.atRoadTrip1.model.Game;
+import byui.cit260.atRoadTrip1.model.Hazard;
 import byui.cit260.atRoadTrip1.model.Hours;
 import byui.cit260.atRoadTrip1.model.InventoryItem;
+import byui.cit260.atRoadTrip1.model.Location;
+import byui.cit260.atRoadTrip1.model.Map;
 import byui.cit260.atRoadTrip1.model.Menu;
+import byui.cit260.atRoadTrip1.model.Motel;
 import byui.cit260.atRoadTrip1.model.Player;
 import byui.cit260.atRoadTrip1.model.Question;
 import byui.cit260.atRoadTrip1.model.RegSceneType;
@@ -88,6 +95,69 @@ public class AtRoadTrip1 {
         
         String menuInfo = menuOne.toString();
         System.out.println(menuInfo);
+        
+        Map mapOne = new Map();
+        
+        mapOne.setDescription("Coast to Coast");
+        mapOne.setColumnCount(6);
+        mapOne.setRowCount(5);
+        mapOne.setCurrentColumn(1);
+        mapOne.setCurrentRow(1);
+        
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
+        
+        Location locationOne = new Location();
+        
+        locationOne.setRow(1);
+        locationOne.setColumn(1);
+        locationOne.setVisited(1);
+        locationOne.setAmountRemaining(29);
+        
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
+        
+        Food foodOne = new Food();
+        
+        foodOne.setCost(20);
+        
+        String foodInfo = foodOne.toString();
+        System.out.println(foodOne);
+        
+        Motel motelOne = new Motel();
+        
+        motelOne.setCost(100);
+        
+        String motelInfo = motelOne.toString();
+        System.out.println(motelInfo);
+        
+        Car carOne = new Car();
+        
+        carOne.setSpeed(65);
+        carOne.setMileage(25);
+        carOne.setTotalMiles(100);
+        
+        String carInfo = carOne.toString();
+        System.out.println(carInfo);
+        
+        Day dayOne = new Day();
+        
+        dayOne.setDayStart(800);
+        dayOne.setDayEnd(2000);
+        dayOne.setTotalDays(1);
+        
+        String dayInfo = dayOne.toString();
+        System.out.println(dayInfo);
+        
+        Hazard hazardOne = new Hazard();
+        
+        hazardOne.setCause("Fog on the road");
+        hazardOne.setEffect("Slow to 25mph");
+        
+        String hazardInfo = hazardOne.toString();
+        System.out.println(hazardInfo);
+        
+        
         
     }
     
