@@ -31,6 +31,6 @@ public class CarControl {
           
           return totalMiles;
             
-}
+    }
 }
     
