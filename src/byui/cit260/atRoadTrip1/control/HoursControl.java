@@ -11,4 +11,27 @@ package byui.cit260.atRoadTrip1.control;
  */
 public class HoursControl {
     
+    public int calcCurrentHour (int prevHour, int timeUsed) {
+   
+            if (prevHour < 0) { // This is an entry error
+                return -222;
+           
+            }
+    
+            if (prevHour > 2400) { 
+                return -333;
+            }
+            
+            if(timeUsed < 0){
+                return -444;
+            }
+            
+            int currentHour = prevHour + (timeUsed * 100);
+            return currentHour;
+            
+    }
+            
+            //if (prevHour + (timeUsed * 100) < 2400) 
+            
+        
 }

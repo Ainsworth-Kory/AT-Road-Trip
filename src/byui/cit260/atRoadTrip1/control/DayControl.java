@@ -11,4 +11,15 @@ package byui.cit260.atRoadTrip1.control;
  */
 public class DayControl {
     
+   public int calcTotalDays (int prevDays) {
+   
+            if (prevDays < 0) { // This is an entry error
+                return -111;
+           
+            }
+   
+            int totalDays = prevDays + 1;
+            return totalDays;
+    
+        }
 }
