@@ -278,5 +278,194 @@ public class InventoryControlTest {
         //fail("The test case is a prototype.");
         
     }
+
+    /**
+     * Test of calcTimeUsed method, of class InventoryControl.
+     */
+    @Test
+    public void testCalcTimeUsed() {
+        System.out.println("calcTimeUsed");
+        
+        /************************
+         * timeUsed Test Case #1
+         ************************/
+        System.out.println("\ttimeUsed Test Case #1");
+        // input values for test case #1
+        int previousTime = 0; // previousTime must be >= 0
+        int timeUsed = 1; // timeUsed must be 0 or 1
+        InventoryControl instance = new InventoryControl();
+        //expected result
+        int expResult = 1;
+        // call function to run test
+        int result = instance.calcTimeUsed(previousTime, timeUsed);
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+        
+        /************************
+         * timeUsed Test Case #2
+         ************************/
+        System.out.println("\ttimeUsed Test Case #2");
+        // input values for test case #2
+        previousTime = -1; // previousTime must be >= 0
+        timeUsed = 1; // timeUsed must be 0 or 1
+        //expected result
+        expResult = -11;
+        // call function to run test
+        result = instance.calcTimeUsed(previousTime, timeUsed);
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+        
+        /************************
+         * timeUsed Test Case #3
+         ************************/
+        System.out.println("\ttimeUsed Test Case #3");
+        // input values for test case #3
+        previousTime = 0; // previousTime must be >= 0
+        timeUsed = -1; // timeUsed must be 0 or 1
+        //expected result
+        expResult = -22;
+        // call function to run test
+        result = instance.calcTimeUsed(previousTime, timeUsed);
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+        
+        /************************
+         * timeUsed Test Case #4
+         ************************/
+        System.out.println("\ttimeUsed Test Case #4");
+        // input values for test case #4
+        previousTime = 0; // previousTime must be >= 0
+        timeUsed = 0; // timeUsed must be 0 or 1
+        //expected result
+        expResult = 0;
+        // call function to run test
+        result = instance.calcTimeUsed(previousTime, timeUsed);
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+        
+        /************************
+         * timeUsed Test Case #5
+         ************************/
+        System.out.println("\ttimeUsed Test Case #5");
+        // input values for test case #5
+        previousTime = 0; // previousTime must be >= 0
+        timeUsed = 1; // timeUsed must be 0 or 1
+        //expected result
+        expResult = 1;
+        // call function to run test
+        result = instance.calcTimeUsed(previousTime, timeUsed);
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+        
+        /************************
+         * timeUsed Test Case #6
+         ************************/
+        System.out.println("\ttimeUsed Test Case #6");
+        // input values for test case #6
+        previousTime = 29; // previousTime must be >= 0
+        timeUsed = 1; // timeUsed must be 0 or 1
+        //expected result
+        expResult = 30;
+        // call function to run test
+        result = instance.calcTimeUsed(previousTime, timeUsed);
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        // fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of calcGasCost method, of class InventoryControl.
+     */
+    @Test
+    public void testCalcGasCost() {
+        System.out.println("calcGasCost");
+        
+        /************************
+         * gasCost Test Case #1
+         ************************/
+        System.out.println("\tgasCost Test Case #1");
+        // input values for test case #1
+        double remainGas = 5.0; // remainGas must be > 0
+        InventoryControl instance = new InventoryControl();
+        //expected result
+        double expResult = 11.25;
+        // call function to run test
+        double result = instance.calcGasCost(remainGas);
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        /************************
+         * gasCost Test Case #2
+         ************************/
+        System.out.println("\tgasCost Test Case #2");
+        // input values for test case #2
+        remainGas = 0.0; // remainGas must be > 0
+        //expected result
+        expResult = -33;
+        // call function to run test
+        result = instance.calcGasCost(remainGas);
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        /************************
+         * gasCost Test Case #3
+         ************************/
+        System.out.println("\tgasCost Test Case #3");
+        // input values for test case #3
+        remainGas = -1.0; // remainGas must be > 0
+        //expected result
+        expResult = -33;
+        // call function to run test
+        result = instance.calcGasCost(remainGas);
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        /************************
+         * gasCost Test Case #4
+         ************************/
+        System.out.println("\tgasCost Test Case #4");
+        // input values for test case #4
+        remainGas = 1.0; // remainGas must be > 0
+        //expected result
+        expResult = 20.25;
+        // call function to run test
+        result = instance.calcGasCost(remainGas);
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+        /************************
+         * gasCost Test Case #5
+         ************************/
+        System.out.println("\tgasCost Test Case #5");
+        // input values for test case #5
+        remainGas = 10.0; // remainGas must be > 0
+        //expected result
+        expResult = 0.0;
+        // call function to run test
+        result = instance.calcGasCost(remainGas);
+        //compare expected return value with actual value returned
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+    }
     
 }

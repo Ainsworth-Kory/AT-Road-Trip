@@ -55,8 +55,42 @@ public class InventoryControl {
            
        double cashUsed = gasCost + foodCost + motelCost + fineCost;
        
-       double cashRemining = previousCash - cashUsed;
+       double cashRemaining = previousCash - cashUsed;
        
        return cashUsed;
+   }
+    /*
+    * @author Kory Ainsworth
+    */
+   public int calcTimeUsed (int previousTime, int timeUsed) {
+    
+       if (previousTime < 0){
+           return -11;
+       }
+       
+       if (timeUsed < 0 || timeUsed > 1) {
+           return -22 ;
+       }
+             
+                
+       int totalTime = previousTime + timeUsed;
+           
+       return totalTime;
+   }
+   
+   /*
+    * @author Kory Ainsworth
+    */
+   public double calcGasCost (double remainGas) {
+    
+       if (remainGas <= 0){
+           return -33;
+       }
+                
+       double purchGas = 10 - remainGas;
+       
+       double gasCost = 2.25 * purchGas;
+           
+       return gasCost;
    }
 }
