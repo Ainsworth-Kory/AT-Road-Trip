@@ -5,10 +5,27 @@
  */
 package byui.cit260.atRoadTrip1.control;
 
+import atroadtrip1.AtRoadTrip1;
+import byui.cit260.atRoadTrip1.model.Player;
+
 /**
  *
  * @author whitbillman
  */
 public class GameControl {
+
+    public static Player createPlayer(String name) {
+        
+        if (name == null) {
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(name);
+        
+        AtRoadTrip1.setPlayer(player); // save the player
+        
+        return player;
+    }
     
 }
