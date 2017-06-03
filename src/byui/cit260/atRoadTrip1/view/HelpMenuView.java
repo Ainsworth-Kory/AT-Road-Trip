@@ -5,27 +5,27 @@
  */
 package byui.cit260.atRoadTrip1.view;
 
-import atroadtrip1.AtRoadTrip1;
-import byui.cit260.atRoadTrip1.control.GameControl;
 import java.util.Scanner;
 
 /**
  *
  * @author Ian Tabeling
  */
-public class MainMenuView {
-     
+public class HelpMenuView {
+    
     private String menu;
     private String promptMessage;
     
-    public MainMenuView(){
+    public HelpMenuView(){
         this.menu = "\n"
                   + "\n--------------------------------------"
-                  + "\n  Main Menu                           "
+                  + "\n  Help Menu                           "
                   + "\n--------------------------------------"
-                  + "\nN - Start new game"
-                  + "\nR - Restart existing game"
-                  + "\nH - Get help on how to play the game"
+                  + "\nG - What is the goal of the game ?"
+                  + "\nM - How to move"
+                  + "\nE - Estimating mileage (mpg)"
+                  + "\nH - Hazards"
+                  + "\nS - Spending money"
                   + "\nQ - Quit"
                   + "\n--------------------------------------";
     
@@ -35,22 +35,21 @@ public class MainMenuView {
     * displays the start program view
     */
 
-   public void displayMainMenuView() {
+   public void displayHelpMenuView() {
          
        boolean done = false; // set flag to not done
        do {
-           // prompt for and get players name
-           String menuOption = this.getMenuOption();
-           if (menuOption.toUpperCase().equals("Q")) // user wants to quit game
-               return; // exit the game
+           // prompt player for Help Menu option
+           String helpMenuOption = this.getHelpMenuOption();
+           /*if (helpMenuOption.toUpperCase().equals("Q")) // user wants to quit game
+               return; // exit the game*/
            
            // do the requested action and disply the next view
-           done = this.doAction(menuOption);
+           done = this.doAction(helpMenuOption);
        
        } while (!done);
    }
-
-    private String getMenuOption() {
+    private String getHelpMenuOption() {
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
@@ -69,7 +68,7 @@ public class MainMenuView {
           }
             return value; // return the value entered
     }
-
+    
     public boolean doAction(String choice){
         
         choice = choice.toUpperCase(); // convert choice to upper case
@@ -77,14 +76,23 @@ public class MainMenuView {
         boolean rtnValue = true;
         
         switch (choice){
-            case "N": // create and start new game
-                this.startNewGame();
+            case "G": // What is the goal of the game?
+                this.displayGoal();
                 break;
-            case "G": // get and start an existing game
-                this.startExistingGame();
+            case "M": // how to move
+                this.displayMove();
                 break;
-            case "H": // display the help menu
-                this.displayHelpMenuView();
+            case "E": // estimating mileage
+                this.displayEstimateMileage();
+                break;
+             case "H": // Hazards
+                this.displayHazards();
+                break;
+             case "S": // spending money
+                this.displaySpendMoney();
+                break;
+            case "Q": // quit help menu
+                this.displayQuitHelp();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
@@ -94,23 +102,39 @@ public class MainMenuView {
     
           return rtnValue;
     } 
-     private void startNewGame(){
-         // create a new game
-        GameControl.createNewGame(AtRoadTrip1.getPlayer());
     
-        // display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-     }
-    private void startExistingGame(){
-        System.out.println("*** startExistingGame function called ***");
+   void displayMenu(){
+        System.out.println(this.menu);
     }
-    
-     void displayHelpMenuView(){
-        // display help menu
-       HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView(); 
+    private void displayGoal() {
+        System.out.println("*** displayGoal function called ***");
     }
-  }
 
+    private void displayMove() {
+        System.out.println("*** displayMove function called ***"); 
+    }
+
+    private void displayEstimateMileage() {
+        System.out.println("*** displayEstimateMileage function called ***");
+        
+    }
+
+    private void displayHazards() {
+        System.out.println("*** displayHazards function called ***");
+        
+    }
+
+    private void displaySpendMoney() {
+        System.out.println("*** displaySpendMoney function called ***");
+       
+    }
+
+    private void displayQuitHelp() {
+        System.out.println("*** displayQuitHelp function called ***");
+        
+    }
+
+}
+
+  
 
