@@ -130,8 +130,8 @@ public class HelpMenuView {
     }
 
     private void displayQuitHelp() {
-        MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.displayGameMenuView();
         
     }
 
