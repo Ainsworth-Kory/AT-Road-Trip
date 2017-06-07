@@ -130,7 +130,8 @@ public class HelpMenuView {
     }
 
     private void displayQuitHelp() {
-        System.out.println("*** displayQuitHelp function called ***");
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
         
     }
 
