@@ -21,7 +21,7 @@ public class MainMenuView {
     public MainMenuView(){
         this.menu = "\n"
                   + "\n--------------------------------------"
-                  + "\n  Main Menu                           "
+                  + "\n            Main Menu                 "
                   + "\n--------------------------------------"
                   + "\nN - Start new game"
                   + "\nR - Restart existing game"
@@ -80,7 +80,7 @@ public class MainMenuView {
             case "N": // create and start new game
                 this.startNewGame();
                 break;
-            case "G": // get and start an existing game
+            case "R": // get and start an existing game
                 this.startExistingGame();
                 break;
             case "H": // display the help menu
@@ -99,8 +99,8 @@ public class MainMenuView {
         GameControl.createNewGame(AtRoadTrip1.getPlayer());
     
         // display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.displayGameMenuView();
      }
     private void startExistingGame(){
         System.out.println("*** startExistingGame function called ***");
