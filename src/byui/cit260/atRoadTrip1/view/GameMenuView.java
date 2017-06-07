@@ -24,7 +24,10 @@ public class GameMenuView {
                   + "\nV - View Trip Info"
                   + "\nD - Drive"
                   + "\nC - Count Cash"
-                  + "\nB - Stop for food, gas or motel"
+                  + "\nG - Stop for gas"
+                  + "\nF - Stop for food"
+                  + "\nP - Stop for food & gas"
+                  + "\nM - Stop for motel"
                   + "\nS - Save Game"
                   + "\nH - Help Menu"
                   + "\nQ - Quit"
@@ -80,6 +83,18 @@ public class GameMenuView {
             case "C": // count cash
                 this.displayCountCash();
                 break;
+             case "G": // count cash
+                this.displayStopForGas();
+                break;
+             case "F": // count cash
+                this.displayStopForFood();
+                break;
+              case "P": // count cash
+                this.displayStopForFoodGas();
+                break;
+              case "M": // count cash
+                this.displayStopForMotel();
+                break;
              case "S": // save game
                 this.displaySaveGame();
                 break;
@@ -110,7 +125,21 @@ public class GameMenuView {
     private void displayCountCash() {
         System.out.println("*** displayCountCash function called ***");
     }
+ private void displayStopForGas() {
+        System.out.println("*** displayStopForGas function called ***"); 
+    }
 
+    private void displayStopForFood() {
+        System.out.println("*** displayStopForFood function called ***"); 
+    }
+
+    private void displayStopForFoodGas() {
+        System.out.println("*** displayStopForFoodGas function called ***"); 
+    }
+
+    private void displayStopForMotel() {
+        System.out.println("*** displayStopForMotel function called ***"); 
+    }
     private void displaySaveGame() {
         System.out.println("*** displaySaveGame function called ***");
     }
@@ -124,5 +153,6 @@ public class GameMenuView {
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMainMenuView();
     }
+
 }
 
