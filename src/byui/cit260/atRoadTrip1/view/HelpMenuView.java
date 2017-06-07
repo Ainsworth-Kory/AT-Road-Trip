@@ -19,7 +19,7 @@ public class HelpMenuView {
     public HelpMenuView(){
         this.menu = "\n"
                   + "\n--------------------------------------"
-                  + "\n  Help Menu                           "
+                  + "\n              Help Menu               "
                   + "\n--------------------------------------"
                   + "\nG - What is the goal of the game ?"
                   + "\nM - How to move"
