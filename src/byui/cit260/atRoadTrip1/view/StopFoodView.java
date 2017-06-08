@@ -11,40 +11,40 @@ import java.util.Scanner;
  *
  * @author Kory
  */
-public class StopGasView {
+public class StopFoodView {
     
     private String promptMessage;
     
-    public StopGasView(){
+    public StopFoodView(){
         
-         this.promptMessage = "\nFill it up? (Y or N)";
+         this.promptMessage = "\nWould you like something to eat? (Y or N)";
          // display the banner when the view is created
          this.displayBanner();
 
     }
 
-    public void displayStopGasView() {
+    public void displayStopFoodView() {
         
         boolean done = false; // set flag to not done
        do {
            // prompt player for yes or no
-           String stopGasOption = this.getStopGasOption();
-        
+           String stopFoodOption = this.getStopFoodOption();
+           
            // do the requested action and display the next view
-           done = this.doAction(stopGasOption);
+           done = this.doAction(stopFoodOption);
        
        } while (!done);
         
     }
         
-    private String getStopGasOption(){
+    private String getStopFoodOption(){
         
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
         
         while (!valid) { //loop while an invalid value is enter
-            System.out.println("\n" + this.promptMessage);
+            System.out.println("\nHow much would you like to spend on food?");
             
             value = keyboard.nextLine(); // get the next line typed on the keyboard
             value = value.trim(); // trim off the leading and trailing blanks  
@@ -67,14 +67,14 @@ public class StopGasView {
         
         boolean rtnValue = true;
          switch (choice){
-            case "Y": // Yes buy gas
-                this.displayBuyGas();
+            case "Y": // Yes buy food
+                this.displayBuyFood();
                 break;
-            case "N": // No do not buy gas and return to game menu
-                this.displayNoGas();
+            case "N": // No do not buy food and return to game menu
+                this.displayNoFood();
                 break;
             case "Q": // quit and return to game menu
-                this.displayQuitStopGas();
+                this.displayQuitStopFood();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
@@ -83,40 +83,33 @@ public class StopGasView {
         }
             return rtnValue;
 }
+        
+    
     private void displayBanner() {
         
         System.out.println(
                 "\n***********************************"
               + "\n*                                 *"
-              + "\n*     Welcome to Gas-o-Rama!      *"
+              + "\n*     Welcome to Chuck-n-Go!      *"
               + "\n*                                 *"
               + "\n***********************************"
         );
     }
+
     
-    /*
-    void displayPrompt() {
-        System.out.println(this.prompt);
-    }
-    */
-    private String stopGasOption() {  // What does this do??
-        System.out.println("\n*** stopGasOption string displayed ***");
-        return "Thank You!";
-    }
-    
-    private void displayBuyGas() {
-        System.out.println("\n*** displayBuyGas() function called ***"
-                        + "\nYou just purchased xx.x gallons of gas at a cost of $xx.xx."
+    private void displayBuyFood() {
+        System.out.println("\n*** displayBuyFood() function called ***"
+                        + "\nYou just purchased food at a cost of $xx.xx."
                         );
     }
 
-    // send the player back to the game menu if they do not want to buy gas
-    private void displayNoGas() {
+    // send the player back to the game menu if they do not want to buy food
+    private void displayNoFood() {
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.displayGameMenuView();
     }
 
-    private void displayQuitStopGas() {
+    private void displayQuitStopFood() {
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.displayGameMenuView();
     }

@@ -89,14 +89,14 @@ public class GameMenuView {
             case "G": // stop for gas
                 this.displayStopGas();
                 break;    
-            case "F": // count cash
-                this.displayStopForFood();
+            case "F": // stop for food
+                this.displayStopFood();
                 break;
             case "P": // count cash
-                this.displayStopForFoodGas();
+                this.displayStopFoodGas();
                 break;
             case "M": // count cash
-                this.displayStopForMotel();
+                this.displayStopMotel();
                 break;
             case "S": // save game
                 this.displaySaveGame();
@@ -134,16 +134,17 @@ public class GameMenuView {
         stopGasView.displayStopGasView();
     }    
 
-    private void displayStopForFood() {
-        System.out.println("*** displayStopForFood function called ***"); 
+    private void displayStopFood() {
+        StopFoodView stopFoodView = new StopFoodView();
+        stopFoodView.displayStopFoodView();
     }
 
-    private void displayStopForFoodGas() {
-        System.out.println("*** displayStopForFoodGas function called ***"); 
+    private void displayStopFoodGas() {
+        System.out.println("*** displayStopFoodGas function called ***"); 
     }
 
-    private void displayStopForMotel() {
-        System.out.println("*** displayStopForMotel function called ***"); 
+    private void displayStopMotel() {
+        System.out.println("*** displayStopMotel function called ***"); 
     }
 
     private void displaySaveGame() {
