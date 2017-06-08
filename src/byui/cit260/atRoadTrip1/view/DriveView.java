@@ -65,15 +65,82 @@ public class DriveView {
         
         boolean rtnValue = true;
          switch (choice){
-            case "10": // Speed int
+             case "0": // Speed int
                 this.displaySpeedView();
                 break;
+             case "5": // Speed int
+                this.displaySpeedView();
+                break;   
+             case "10": // Speed int
+                this.displaySpeedView();
+                break;   
+             case "15": // Speed int
+                this.displaySpeedView();
+                break;   
+             case "20": // Speed int
+                this.displaySpeedView();
+                break;  
+             case "25": // Speed int
+                this.displaySpeedView();
+                break; 
+             case "30": // Speed int
+                this.displaySpeedView();
+                break;   
+             case "35": // Speed int
+                this.displaySpeedView();
+                break;   
+             case "40": // Speed int
+                this.displaySpeedView();
+                break;  
+             case "45": // Speed int
+                this.displaySpeedView();
+                break;   
+             case "50": // Speed int
+                this.displaySpeedView();
+                break;  
+             case "55": // Speed int
+                this.displaySpeedView();
+                break; 
+             case "60": // Speed int
+                this.displaySpeedView();
+                break;   
+             case "65": // Speed int
+                this.displaySpeedView();
+                break;   
+             case "70": // Speed int
+                this.displaySpeedView();
+                break;    
+             case "75": // Speed int
+                this.displaySpeedView();
+                break;   
+             case "80": // Speed int
+                this.displaySpeedView();
+                break;  
+             case "85": // Speed int
+                this.displaySpeedView();
+                break; 
+             case "90": // Speed int
+                this.displaySpeedView();
+                break;   
+             case "95": // Speed int
+                this.displaySpeedView();
+                break;   
+             case "100": // Speed int
+                this.displaySpeedView();
+                break;    
+             case "105": // Speed int
+                this.displaySpeedView();
+                break;
+          
+                
             case "No": // "sorry my error"
                 this.displayNoDriveView();
                 break;
+                
             case "Q": // quit and return to game menu 
                 this.displayQuitDriveView();
                 break;
+                
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
                rtnValue = false;
