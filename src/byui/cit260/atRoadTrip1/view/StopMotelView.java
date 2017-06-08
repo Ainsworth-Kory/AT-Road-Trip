@@ -16,13 +16,13 @@ public class StopMotelView {
     
     public StopMotelView(){
         
-         this.promptMessage = "\nStop for the night? (Y or N)";
+         this.promptMessage = "\nWould you like to stop for the night? Cost = $100 (Y or N)";
          // display the banner when the view is created
          this.displayBanner();
 
     }
     
-    public void displayStopGasView() {
+    public void displayStopMotelView() {
         
         boolean done = false; // set flag to not done
        do {
@@ -85,12 +85,12 @@ public class StopMotelView {
         System.out.println(
                 "\n**************************************"
               + "\n*                                    *"
-              + "\n*  Welcome to Road Trip Inn!   *"
+              + "\n*  Welcome to Road Trip Inn!         *"
               + "\n*                                    *"
               + "\n**************************************"
         );
     }
-
+              
     private void displayStopMotel() {
          System.out.println("\n*** displayStopMotel() function called ***"
                         + "\nThank you for staying at the Road Trip Inn!"
@@ -106,7 +106,5 @@ public class StopMotelView {
          GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.displayGameMenuView();
     }
-        
-
  }
 
