@@ -25,6 +25,7 @@ public class GameMenuView {
                   + "\nD - Drive"
                   + "\nC - Count Cash"
                   + "\nB - Stop for food, gas or motel"
+                  + "\nG - Stop for gas"
                   + "\nS - Save Game"
                   + "\nH - Help Menu"
                   + "\nQ - Quit"
@@ -34,6 +35,7 @@ public class GameMenuView {
     }
 
     public void displayGameMenuView() {
+        
         boolean done = false; // set flag to not done
        do {
            // prompt player for Help Menu option
@@ -47,7 +49,9 @@ public class GameMenuView {
        } while (!done);
         
     }
-        private String getGameMenuOption() {
+    
+    private String getGameMenuOption() {
+        
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; // initialize to not valid
@@ -65,7 +69,7 @@ public class GameMenuView {
           }
             return value; // return the value entered
 }
-            public boolean doAction(String choice){
+        public boolean doAction(String choice){
         
         choice = choice.toUpperCase(); // convert choice to upper case
         
@@ -80,6 +84,9 @@ public class GameMenuView {
             case "C": // count cash
                 this.displayCountCash();
                 break;
+            case "G": // stop for gas
+                this.displayStopGas();
+                break;    
              case "S": // save game
                 this.displaySaveGame();
                 break;
@@ -111,6 +118,11 @@ public class GameMenuView {
         System.out.println("*** displayCountCash function called ***");
     }
 
+    private void displayStopGas() {
+        StopGasView stopGasView = new StopGasView();
+        stopGasView.displayStopGasView();
+    }
+    
     private void displaySaveGame() {
         System.out.println("*** displaySaveGame function called ***");
     }
@@ -124,5 +136,6 @@ public class GameMenuView {
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMainMenuView();
     }
+    
 }
 

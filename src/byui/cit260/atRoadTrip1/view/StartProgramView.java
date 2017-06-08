@@ -91,7 +91,7 @@ public class StartProgramView {
                     + "The name must be greater than one character in length");
             return false;
         }
-        // call createPaler() control function
+        // call createPlayer() control function
         Player player = GameControl.createPlayer(playersName);
         
         if (player == null) { // if unsuccessful
