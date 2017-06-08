@@ -24,8 +24,10 @@ public class GameMenuView {
                   + "\nV - View Trip Info"
                   + "\nD - Drive"
                   + "\nC - Count Cash"
-                  + "\nB - Stop for food, gas or motel"
                   + "\nG - Stop for gas"
+                  + "\nF - Stop for food"
+                  + "\nP - Stop for food & gas"
+                  + "\nM - Stop for motel"
                   + "\nS - Save Game"
                   + "\nH - Help Menu"
                   + "\nQ - Quit"
@@ -87,10 +89,19 @@ public class GameMenuView {
             case "G": // stop for gas
                 this.displayStopGas();
                 break;    
-             case "S": // save game
+            case "F": // count cash
+                this.displayStopForFood();
+                break;
+            case "P": // count cash
+                this.displayStopForFoodGas();
+                break;
+            case "M": // count cash
+                this.displayStopForMotel();
+                break;
+            case "S": // save game
                 this.displaySaveGame();
                 break;
-             case "H": // help menu
+            case "H": // help menu
                  this.displayHelpMenu();
                  break;
             case "Q": // quit help menu
@@ -117,12 +128,24 @@ public class GameMenuView {
     private void displayCountCash() {
         System.out.println("*** displayCountCash function called ***");
     }
-
+ 
     private void displayStopGas() {
         StopGasView stopGasView = new StopGasView();
         stopGasView.displayStopGasView();
+    }    
+
+    private void displayStopForFood() {
+        System.out.println("*** displayStopForFood function called ***"); 
     }
-    
+
+    private void displayStopForFoodGas() {
+        System.out.println("*** displayStopForFoodGas function called ***"); 
+    }
+
+    private void displayStopForMotel() {
+        System.out.println("*** displayStopForMotel function called ***"); 
+    }
+
     private void displaySaveGame() {
         System.out.println("*** displaySaveGame function called ***");
     }
@@ -136,6 +159,6 @@ public class GameMenuView {
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.displayMainMenuView();
     }
-    
+
 }
 
