@@ -144,7 +144,8 @@ public class GameMenuView {
     }
 
     private void displayStopMotel() {
-        System.out.println("*** displayStopMotel function called ***"); 
+       StopMotelView stopMotelView = new StopMotelView();
+        stopMotelView.displayStopMotelView(); 
     }
 
     private void displaySaveGame() {
