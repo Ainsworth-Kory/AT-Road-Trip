@@ -122,7 +122,8 @@ public class GameMenuView {
     }
 
     private void displayDrive() {
-        System.out.println("*** displayDrive function called ***");
+        DriveView driveView = new DriveView();
+        driveView.displayDriveView();
     }
 
     private void displayCountCash() {
