@@ -41,6 +41,10 @@ public class InventoryControl {
            return -666;
        }
        
+       if (gasCost > 499){
+           return -5555;
+       }
+       
        if (motelCost > 499) {
            return -6666 ;
        }
