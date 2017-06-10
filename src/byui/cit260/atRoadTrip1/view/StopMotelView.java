@@ -16,7 +16,9 @@ public class StopMotelView {
     
     public StopMotelView(){
         
-         this.promptMessage = "\nWould you like to stop for the night? Cost = $100 (Y or N)";
+         this.promptMessage = "\nWould you like to stop for the night? "
+                             +"\nCost = $100 (Y or N)";
+                                     
          // display the banner when the view is created
          this.displayBanner();
 
