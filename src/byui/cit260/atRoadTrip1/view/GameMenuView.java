@@ -33,25 +33,24 @@ public class GameMenuView {
                   + "\nQ - Quit"
                   + "\n--------------------------------------";
     
-    
     }
 
     public void displayGameMenuView() {
         
         boolean done = false; // set flag to not done
        do {
-           // prompt player for Help Menu option
+           // prompt player for Game Menu option
            String gameMenuOption = this.getGameMenuOption();
-           /*if (helpMenuOption.toUpperCase().equals("Q")) // user wants to quit game
-               return; // exit the game*/
+           /*if (gameMenuOption.toUpperCase().equals("Q")) 
+           // user wants to return to previous view
+           
+               return; // return to previous view*/
            
            // do the requested action and disply the next view
            done = this.doAction(gameMenuOption);
        
-       } while (!done);
-        
+       } while (!done);  
     }
-    
     private String getGameMenuOption() {
         
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
@@ -92,10 +91,10 @@ public class GameMenuView {
             case "F": // stop for food
                 this.displayStopFood();
                 break;
-            case "P": // count cash
+            case "P": // stop for food and gas
                 this.displayStopFoodGas();
                 break;
-            case "M": // count cash
+            case "M": // stop for motel
                 this.displayStopMotel();
                 break;
             case "S": // save game
