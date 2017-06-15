@@ -10,7 +10,6 @@ package byui.cit260.atRoadTrip1.view;
  * @author whitbillman
  */
 public interface ViewInterface {
-    
    
     public void display();
     public String getInput();
