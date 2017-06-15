@@ -154,7 +154,7 @@ public class GameMenuView {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
     }
 
     private void displayQuitHelp() {

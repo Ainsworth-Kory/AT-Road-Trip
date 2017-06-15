@@ -11,13 +11,10 @@ import java.util.Scanner;
  *
  * @author Ian Tabeling
  */
-public class HelpMenuView {
-    
-    private String menu;
-    private String promptMessage;
-    
+public class HelpMenuView extends View {
+   
     public HelpMenuView(){
-        this.menu = "\n"
+        super("\n"
                   + "\n--------------------------------------"
                   + "\n              Help Menu               "
                   + "\n--------------------------------------"
@@ -27,7 +24,7 @@ public class HelpMenuView {
                   + "\nH - Hazards"
                   + "\nS - Spending money"
                   + "\nQ - Quit"
-                  + "\n--------------------------------------";
+                  + "\n--------------------------------------");
     
     
     }
@@ -35,14 +32,14 @@ public class HelpMenuView {
     * displays the start program view
     */
 
-   public void displayHelpMenuView() {
+ /*  public void displayHelpMenuView() {
          
        boolean done = false; // set flag to not done
        do {
            // prompt player for Help Menu option
            String helpMenuOption = this.getHelpMenuOption();
-           /*if (helpMenuOption.toUpperCase().equals("Q")) // user wants to quit game
-               return; // exit the game*/
+           if (helpMenuOption.toUpperCase().equals("Q")) // user wants to quit game
+               return; // exit the game
            
            // do the requested action and disply the next view
            done = this.doAction(helpMenuOption);
@@ -68,7 +65,9 @@ public class HelpMenuView {
           }
             return value; // return the value entered
     }
+    */ 
     
+    @Override
     public boolean doAction(String choice){
         
         choice = choice.toUpperCase(); // convert choice to upper case
@@ -104,7 +103,9 @@ public class HelpMenuView {
     } 
     
    void displayMenu(){
-        System.out.println(this.menu);
+          // display help menu
+       HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display(); //HelpMenuView
     }
     private void displayGoal() {
         System.out.println("*** displayGoal function called ***");
