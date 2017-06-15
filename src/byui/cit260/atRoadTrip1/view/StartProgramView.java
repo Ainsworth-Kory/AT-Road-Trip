@@ -13,12 +13,12 @@ import java.util.Scanner;
  *
  * @author Ian Tabeling
  */
-public class StartProgramView {
+public class StartProgramView extends View {
     
     private String promptMessage;
     
     public StartProgramView() {
-        // promtMessage = "Please enter your name"
+         promptMessage = "Please enter your name";
         
         this.promptMessage = "\nPlease enter your first name: ";
         // display the banner when view is created
@@ -47,6 +47,7 @@ public class StartProgramView {
      /**
       *  displays the start program view
       */
+    /*
     public void displayStartProgramView() {
         
         boolean done = false; // set flag to not done
@@ -83,8 +84,9 @@ public class StartProgramView {
           }
             return value; // return the value entered
       }
-
-    private boolean doAction(String playersName) {
+*/
+    @Override
+    public boolean doAction(String playersName) {
         
         if (playersName.length() < 2){
             System.out.println("\nInvalid players name:  "
@@ -117,7 +119,7 @@ public class StartProgramView {
         MainMenuView mainMenuView = new MainMenuView();
         
         // Display the main menu view
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
     }
 
     

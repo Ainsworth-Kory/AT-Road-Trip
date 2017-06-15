@@ -53,7 +53,7 @@ public class AtRoadTrip1 {
         
         // create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
+        startProgramView.display();
     }   
 
     /*public static void setPlayer(Player player) {

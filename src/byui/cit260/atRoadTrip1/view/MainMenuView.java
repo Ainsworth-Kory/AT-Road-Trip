@@ -13,13 +13,10 @@ import java.util.Scanner;
  *
  * @author Ian Tabeling
  */
-public class MainMenuView {
-     
-    private String menu;
-    private String promptMessage;
-    
-    public MainMenuView(){
-        this.menu = "\n"
+public class MainMenuView extends View {
+
+    public MainMenuView() {
+        super("\n"
                   + "\n--------------------------------------"
                   + "\n            Main Menu                 "
                   + "\n--------------------------------------"
@@ -27,15 +24,15 @@ public class MainMenuView {
                   + "\nR - Restart existing game"
                   + "\nH - Get help on how to play the game"
                   + "\nQ - Quit"
-                  + "\n--------------------------------------";
-    
+                  + "\n--------------------------------------");
     
     }
+   
     /*
     * displays the start program view
     */
 
-   public void displayMainMenuView() {
+  /* public void displayMainMenuView() {
          
        boolean done = false; // set flag to not done
        do {
@@ -69,14 +66,15 @@ public class MainMenuView {
           }
             return value; // return the value entered
     }
-
-    public boolean doAction(String choice){
+*/
+    @Override
+    public boolean doAction(String value){
         
-        choice = choice.toUpperCase(); // convert choice to upper case
+        value = value.toUpperCase(); // convert choice to upper case
         
         boolean rtnValue = true;
         
-        switch (choice){
+        switch (value){
             case "N": // create and start new game
                 this.startNewGame();
                 break;
@@ -94,13 +92,14 @@ public class MainMenuView {
     
           return rtnValue;
     } 
+    
      private void startNewGame(){
          // create a new game
         GameControl.createNewGame(AtRoadTrip1.getPlayer());
     
         // display the game menu
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.displayGameMenuView(); //GameMenuView
      }
     private void startExistingGame(){
         System.out.println("*** startExistingGame function called ***");
@@ -109,7 +108,7 @@ public class MainMenuView {
      void displayHelpMenuView(){
         // display help menu
        HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView(); 
+        helpMenuView.displayHelpMenuView(); //HelpMenuView
     }
   }
 
