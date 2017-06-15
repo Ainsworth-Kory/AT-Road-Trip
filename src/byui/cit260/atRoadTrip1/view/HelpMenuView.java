@@ -132,7 +132,7 @@ public class HelpMenuView extends View {
 
     private void displayQuitHelp() {
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
         
     }
 

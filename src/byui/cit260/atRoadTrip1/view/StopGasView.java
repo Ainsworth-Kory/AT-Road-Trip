@@ -113,12 +113,12 @@ public class StopGasView {
     // send the player back to the game menu if they do not want to buy gas
     private void displayNoGas() {
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
 
     private void displayQuitStopGas() {
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
     
 }

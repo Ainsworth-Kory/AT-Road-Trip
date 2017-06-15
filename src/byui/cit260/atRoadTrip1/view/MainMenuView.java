@@ -99,7 +99,7 @@ public class MainMenuView extends View {
     
         // display the game menu
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView(); //GameMenuView
+        gameMenuView.display(); //GameMenuView
      }
     private void startExistingGame(){
         System.out.println("*** startExistingGame function called ***");

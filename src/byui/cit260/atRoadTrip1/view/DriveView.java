@@ -169,11 +169,11 @@ public class DriveView {
 // Return the game menu 
     private void displayNoDriveView() {
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
 
     private void displayQuitDriveView() {
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
 }  
