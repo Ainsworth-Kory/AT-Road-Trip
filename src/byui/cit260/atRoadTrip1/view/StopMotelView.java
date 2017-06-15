@@ -98,15 +98,15 @@ public class StopMotelView {
                         + "\nThank you for staying at the Road Trip Inn!"
                         );
     }
-
+    
     private void displayNotStop() {
        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
 
     private void displayQuitStopMotel() {
          GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
  }
 

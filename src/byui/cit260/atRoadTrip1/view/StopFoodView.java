@@ -106,12 +106,12 @@ public class StopFoodView {
     // send the player back to the game menu if they do not want to buy food
     private void displayNoFood() {
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
 
     private void displayQuitStopFood() {
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
     
 }
