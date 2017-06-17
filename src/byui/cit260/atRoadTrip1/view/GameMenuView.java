@@ -107,7 +107,7 @@ public class GameMenuView extends View{
 
     private void displayStopMotel() {
        StopMotelView stopMotelView = new StopMotelView();
-        stopMotelView.displayStopMotelView(); 
+        stopMotelView.display(); 
     }
 
     private void displaySaveGame() {

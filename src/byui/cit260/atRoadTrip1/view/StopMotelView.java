@@ -11,19 +11,19 @@ import java.util.Scanner;
  *
  * @author Ian Tabeling
  */
-public class StopMotelView {
+public class StopMotelView extends View{
     private String promptMessage;
     
     public StopMotelView(){
         
-         this.promptMessage = "\nWould you like to stop for the night? "
-                             +"\nCost = $100 (Y or N)";
+         /*this.promptMessage =*/ super("\nWould you like to stop for the night? "
+                             +"\nCost = $100 (Y or N)");
                                      
          // display the banner when the view is created
          this.displayBanner();
 
     }
-    
+    /*
     public void displayStopMotelView() {
         
         boolean done = false; // set flag to not done
@@ -59,13 +59,14 @@ public class StopMotelView {
              break; // end the loop
           }
             return value; // return the value entered
- }
-     private boolean doAction(String choice){        
+ }*/
+     @Override
+    public boolean doAction(String value){        
             
-        choice = choice.toUpperCase(); // convert choice to upper case
+        value = value.toUpperCase(); // convert choice to upper case
         
         boolean rtnValue = true;
-         switch (choice){
+         switch (value){
             case "Y": // Yes stop for the night
                 this.displayStopMotel();
                 break;
@@ -94,9 +95,8 @@ public class StopMotelView {
     }
               
     private void displayStopMotel() {
-         System.out.println("\n*** displayStopMotel() function called ***"
-                        + "\nThank you for staying at the Road Trip Inn!"
-                        );
+         System.out.println("\nThank you for staying at the Road Trip Inn!");
+                        
     }
     
     private void displayNotStop() {
