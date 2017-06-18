@@ -11,19 +11,20 @@ import java.util.Scanner;
  *
  * @author whitbillman
  */
-public class DriveView {
+public class DriveView extends View{
     
-    private String promptMessage;
+    //private String promptMessage;
     
     public DriveView(){
         
-         this.promptMessage = "\nWhat speed would you like to drive?";
+         //this.promptMessage = 
+                 super("\nWhat speed would you like to drive?");
          // display the banner when the view is created
-         this.displayBanner();
+         //this.displayBanner();
 
     }
     
-    public void displayDriveView() {
+    /*public void displayDriveView() {
         
         boolean done = false; // set flag to not done
        do {
@@ -58,13 +59,14 @@ public class DriveView {
              break; // end the loop
           }
             return value; // return the value entered
- }
-     private boolean doAction(String choice){        
+ }*/
+     @Override
+     public boolean doAction(String value){        
             
-        choice = choice.toUpperCase(); // convert choice to upper case
+        value = value.toUpperCase(); // convert choice to upper case
         
         boolean rtnValue = true;
-         switch (choice){
+         switch (value){
              case "0": // Speed int
                 this.displaySpeedView();
                 break;

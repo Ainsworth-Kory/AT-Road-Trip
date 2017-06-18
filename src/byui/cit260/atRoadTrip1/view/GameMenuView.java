@@ -47,7 +47,7 @@ public class GameMenuView extends View{
                 this.displayDrive();
                 break;
             case "C": // count cash
-                this.displayCountCash();
+                this.displayCalcCash();
                 break;
             case "G": // stop for gas
                 this.displayStopGas();
@@ -84,11 +84,13 @@ public class GameMenuView extends View{
 
     private void displayDrive() {
         DriveView driveView = new DriveView();
-        driveView.displayDriveView();
+        driveView.display();
     }
 
-    private void displayCountCash() {
-        System.out.println("*** displayCountCash function called ***");
+    private void displayCalcCash() {
+        CalcCashView calcCashView = new CalcCashView();
+        calcCashView.display();
+       
     }
  
     private void displayStopGas() {
