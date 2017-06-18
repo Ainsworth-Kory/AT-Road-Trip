@@ -11,33 +11,33 @@ import java.util.Scanner;
  *
  * @author Kory
  */
-public class StopGasView extends View{
+public class StopFoodGasView extends View{
     
     private String promptMessage;
     
-    public StopGasView(){
-        super ("\nFill it up? (Y or N)");
-    /*     this.promptMessage = "\nFill it up? (Y or N)"; */
+    public StopFoodGasView(){
+        super ("\nFill it up and get a bite to eat? (Y or N)");
+    /*     this.promptMessage = "\nFill it up and get a bite to eat? (Y or N)"; */
          // display the banner when the view is created
          this.displayBanner();
 
     }
     /*
-    public void displayStopGasView() {
+    public void displayStopFoodGasView() {
         
         boolean done = false; // set flag to not done
        do {
            // prompt player for yes or no
-           String stopGasOption = this.getStopGasOption();
+           String stopFoodGasOption = this.getStopFoodGasOption();
         
            // do the requested action and display the next view
-           done = this.doAction(stopGasOption);
+           done = this.doAction(stopFoodGasOption);
        
        } while (!done);
         
     }
         
-    private String getStopGasOption(){
+    private String getStopFoodGasOption(){
         
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String value = ""; // value to be returned
@@ -59,7 +59,7 @@ public class StopGasView extends View{
              break; // end the loop
           }
             return value; // return the value entered
-}  */
+} */
         @Override
         public boolean doAction(String value){        
             
@@ -68,13 +68,13 @@ public class StopGasView extends View{
         boolean rtnValue = true;
          switch (value){
             case "Y": // Yes buy gas
-                this.displayBuyGas();
+                this.displayBuyFoodGas();
                 break;
             case "N": // No do not buy gas and return to game menu
-                this.displayNoGas();
+                this.displayNoFoodGas();
                 break;
             case "Q": // quit and return to game menu
-                this.displayQuitStopGas();
+                this.displayQuitStopFoodGas();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
@@ -89,37 +89,27 @@ public class StopGasView extends View{
         System.out.println(
                 "\n***********************************"
               + "\n*                                 *"
-              + "\n*     Welcome to Gas-o-Rama!      *"
+              + "\n*     Welcome to Gas-n-Gulp!      *"
               + "\n*                                 *"
               + "\n***********************************"
-        );
+                );
     }
-    
-    /*
-    void displayPrompt() {
-        System.out.println(this.prompt);
-    }
-    */
-    private String stopGasOption() {  // What does this do??
-        System.out.println("\n*** stopGasOption string displayed ***");
-        return "Thank You!";
-    }
-    
-    private void displayBuyGas() {
-        System.out.println("\n*** displayBuyGas() function called ***"
+
+    private void displayBuyFoodGas() {
+        System.out.println("\n*** displayBuyFoodGas() function called ***"
                         + "\nYou just purchased xx.x gallons of gas at a cost of $xx.xx."
+                        + "\n and purchased food at a cost of $25.00."
                         );
     }
 
-    // send the player back to the game menu if they do not want to buy gas
-    private void displayNoGas() {
+    private void displayNoFoodGas() {
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
     }
 
-    private void displayQuitStopGas() {
+    private void displayQuitStopFoodGas() {
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
     }
-    
+
 }

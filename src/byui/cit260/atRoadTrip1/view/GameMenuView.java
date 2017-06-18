@@ -93,16 +93,17 @@ public class GameMenuView extends View{
  
     private void displayStopGas() {
         StopGasView stopGasView = new StopGasView();
-        stopGasView.displayStopGasView();
+        stopGasView.display();
     }    
 
     private void displayStopFood() {
         StopFoodView stopFoodView = new StopFoodView();
-        stopFoodView.displayStopFoodView();
+        stopFoodView.display();
     }
 
     private void displayStopFoodGas() {
-        System.out.println("*** displayStopFoodGas function called ***"); 
+        StopFoodGasView stopFoodGasView = new StopFoodGasView();
+        stopFoodGasView.display(); 
     }
 
     private void displayStopMotel() {

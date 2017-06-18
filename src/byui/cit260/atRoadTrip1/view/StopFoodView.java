@@ -11,18 +11,18 @@ import java.util.Scanner;
  *
  * @author Kory
  */
-public class StopFoodView {
+public class StopFoodView extends View{
     
     private String promptMessage;
     
     public StopFoodView(){
-        
-         this.promptMessage = "\nWould you like something to eat? (Y or N)";
+        super ("\nWould you like to buy food? (Y or N)");
+    /*     this.promptMessage = "\nWould you like to buy food? (Y or N)"; */
          // display the banner when the view is created
          this.displayBanner();
 
     }
-
+    /*
     public void displayStopFoodView() {
         
         boolean done = false; // set flag to not done
@@ -44,7 +44,7 @@ public class StopFoodView {
         boolean valid = false; // initialize to not valid
         
         while (!valid) { //loop while an invalid value is enter
-            System.out.println("\nHow much would you like to spend on food?");
+            System.out.println("\n" + this.promptMessage);
             
             value = keyboard.nextLine(); // get the next line typed on the keyboard
             value = value.trim(); // trim off the leading and trailing blanks  
@@ -59,20 +59,20 @@ public class StopFoodView {
              break; // end the loop
           }
             return value; // return the value entered
-}
-        
-        private boolean doAction(String choice){        
+}  */
+        @Override
+        public boolean doAction(String value){        
             
-        choice = choice.toUpperCase(); // convert choice to upper case
+        value = value.toUpperCase(); // convert choice to upper case
         
         boolean rtnValue = true;
-         switch (choice){
+         switch (value){
             case "Y": // Yes buy food
                 this.displayBuyFood();
                 break;
             case "N": // No do not buy food and return to game menu
                 this.displayNoFood();
-                break;
+                break; 
             case "Q": // quit and return to game menu
                 this.displayQuitStopFood();
                 break;
@@ -99,7 +99,7 @@ public class StopFoodView {
     
     private void displayBuyFood() {
         System.out.println("\n*** displayBuyFood() function called ***"
-                        + "\nYou just purchased food at a cost of $xx.xx."
+                        + "\nYou just purchased food at a cost of $25.00."
                         );
     }
 
@@ -113,5 +113,6 @@ public class StopFoodView {
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
     }
+
     
 }
