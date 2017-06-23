@@ -6,6 +6,7 @@
 package byui.cit260.atRoadTrip1.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,6 +19,17 @@ public class Location implements Serializable{
     private int column;
     private int visited;
     private int amountRemaining;
+    private RegSceneType scene;
+
+    public RegSceneType getScene() {
+        return scene;
+    }
+
+    public void setScene(RegSceneType scene) {
+        this.scene = scene;
+    }
+    
+    private ArrayList<Actor> actors;
 
     public Location() {
     }
@@ -93,6 +105,10 @@ public class Location implements Serializable{
             return false;
         }
         return true;
+    }
+
+    void setVisited(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

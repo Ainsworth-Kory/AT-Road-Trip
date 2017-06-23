@@ -5,54 +5,65 @@
  */
 package byui.cit260.atRoadTrip1.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
- * @author IanandJenna
+ * @author Ian Tabeling
  */
-public class Actor implements Serializable{
+public enum Actor implements Serializable{
     
+    Buford("The Sheriff"),
+    Gomer("The gas attendant"),
+    Flo("The Server"),
+    Bates("The motel manager");
     // Class Instance Variables
-    private String name;
-    private String description;
+    //private String name;
+    private final String description;
+    private final Point coordinates;
 
-    public Actor() {
-    }
-    
-    
+   /* public Actor() {
+    }*/
+    Actor(String description) {
+         this.description = description;
+         coordinates = new Point(1,1);
+}
 
-    public String getName() {
+    /*public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
-
+*/
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public Point getCoordinates() {
+    return coordinates;
+}
+    /*public void setDescription(String description) {
         this.description = description;
     }
-
-    @Override
+*/
+   /* @Override
     public int hashCode() {
         int hash = 5;
         hash = 41 * hash + Objects.hashCode(this.name);
         hash = 41 * hash + Objects.hashCode(this.description);
         return hash;
-    }
+    }*/
 
-    @Override
+    /*@Override
     public String toString() {
         return "Actor{" + "name=" + name + ", description=" + description + '}';
-    }
+    }*/
 
-    @Override
+    /*@Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -71,7 +82,7 @@ public class Actor implements Serializable{
             return false;
         }
         return true;
-    }
+    }*/
     
     
     

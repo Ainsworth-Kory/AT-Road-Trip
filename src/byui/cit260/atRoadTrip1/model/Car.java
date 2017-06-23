@@ -14,11 +14,14 @@ import java.io.Serializable;
 public class Car implements Serializable{
     
     // class instance variables
+    private String description;
     private int speed;
     private float mileage;
     private int totalMiles;
 
     public Car() {
+        
+        this.description = "\nFerrari Enzo";
     }
     
     

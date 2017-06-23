@@ -17,6 +17,16 @@ public class Day implements Serializable{
     private int dayStart;
     private int dayEnd;
     private int totalDays;
+    private Hours[] hours;
+    
+
+    public Hours[] getHours() {
+        return hours;
+    }
+
+    public void setHours(Hours[] hours) {
+        this.hours = hours;
+    }
 
     public Day() {
     }

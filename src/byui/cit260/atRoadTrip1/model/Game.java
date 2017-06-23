@@ -15,7 +15,60 @@ public class Game implements Serializable{
     
     // class instance variable
     private double time;
+    private Player player;
+    private Car car;
+    private InventoryItem[] inventory;
+    private Day[] day;
+    private Menu[] menu;
+    private Map map;
 
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
+     public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    public Menu[] getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu[] menu) {
+        this.menu = menu;
+    }
+
+    public Day[] getDay() {
+        return day;
+    }
+
+    public void setDay(Day[] day) {
+        this.day = day;
+    }
+
+    public InventoryItem[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
+    }
+    
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+    
     public Game() {
     }
     
@@ -56,6 +109,15 @@ public class Game implements Serializable{
             return false;
         }
         return true;
+    }
+
+   /* public void setPlayer(Player player) {
+        System.out.println("*** called setPlayer() in Game.java");
+        return null;
+    }*/
+
+    public void setDay(Day day) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
