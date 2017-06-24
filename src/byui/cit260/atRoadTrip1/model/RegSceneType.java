@@ -18,9 +18,8 @@ public class RegSceneType implements Serializable{
     private String description;
     private String tripInfo;
 
-    public RegSceneType() {
-    }
-    
+  
+  
     public String getDescription() {
         return description;
     }
@@ -36,6 +35,12 @@ public class RegSceneType implements Serializable{
     public void setTripInfo(String tripInfo) {
         this.tripInfo = tripInfo;
     }
+      
+    void setMapSymbol(String _st_) {
+         System.out.println("\n *** Set map symbol ***");
+         
+    }
+    
 
     @Override
     public int hashCode() {
@@ -71,6 +76,11 @@ public class RegSceneType implements Serializable{
         return true;
     }
     
+    public enum SceneType {
+        start,
+        road,
+        finish;
+    }
     
     
 }

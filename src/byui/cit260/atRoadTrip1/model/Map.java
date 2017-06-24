@@ -5,14 +5,19 @@
  */
 package byui.cit260.atRoadTrip1.model;
 
+import byui.cit260.atRoadTrip1.control.GameControl;
+import byui.cit260.atRoadTrip1.model.RegSceneType.SceneType;
 import java.io.Serializable;
 import java.util.Objects;
+import javafx.scene.Scene;
 
 /**
  *
  * @author Kory
  */
 public class Map implements Serializable{
+
+    
     
     // class instance variables
     private String description;
@@ -39,7 +44,7 @@ public class Map implements Serializable{
     public Map(int noOfRows, int noOfColumns){
     
       if (noOfRows < 1 || noOfColumns < 1){
-          System.out.println("The number of rows and colums must be > 1");
+          System.out.println("The number of rows and columns must be > 1");
           return;
       }
          this.noOfRows = noOfRows;
@@ -60,11 +65,13 @@ public class Map implements Serializable{
          // assign the location object to the current position in array
          locations[row][column] = location;
          }
-         }       
-    }
+      }       
+   }
     
     
-
+    
+    
+    
     public String getDescription() {
         return description;
     }

@@ -14,11 +14,15 @@ import byui.cit260.atRoadTrip1.model.Item;
 import byui.cit260.atRoadTrip1.model.Map;
 import byui.cit260.atRoadTrip1.model.Player;
 import byui.cit260.atRoadTrip1.model.RegSceneType;
+import byui.cit260.atRoadTrip1.model.RegSceneType.SceneType;
+import javafx.scene.Scene;
 
 /**
  *
  * @author whitbillman
  */
+
+
 public class GameControl {
     
     public static void createNewGame(Player player){
@@ -91,24 +95,45 @@ public class GameControl {
         
        return inventory;         
     }
-    /******COMMENTED OUT TO FIX ERROR TO PUSH TO GITHUB 6/22/17*************
-    private static Map createMap() {
-        // create the map
-        Map map = new Map(5, 6);
-        
-        // create the scenes for the game
 
-       RegSceneType[] regSceneType = createScene();
+    static void assignScenesToLocations(Map map, Scene[] scenes) {
+        Location[][] locations = map.getLocations();
         
-        // assign scenes to locations
-        GameControl.assignScenesToLocations(map, scenes);
-        
-        return map;
-         
+        //start point
+        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.road.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.road.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.road.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.road.ordinal()]);
+        locations[1][0].setScene(scenes[SceneType.road.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.road.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.road.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.road.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.road.ordinal()]);
+        locations[2][0].setScene(scenes[SceneType.road.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.road.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.road.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.road.ordinal()]);
+        locations[2][4].setScene(scenes[SceneType.road.ordinal()]);
+        locations[3][0].setScene(scenes[SceneType.road.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.road.ordinal()]);
+        locations[3][2].setScene(scenes[SceneType.road.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.road.ordinal()]);
+        locations[4][4].setScene(scenes[SceneType.road.ordinal()]);
+        locations[4][0].setScene(scenes[SceneType.road.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.road.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.road.ordinal()]);
+        locations[4][3].setScene(scenes[SceneType.road.ordinal()]);
+        locations[4][4].setScene(scenes[SceneType.road.ordinal()]);
+        locations[5][0].setScene(scenes[SceneType.road.ordinal()]);
+        locations[5][1].setScene(scenes[SceneType.road.ordinal()]);
+        locations[5][2].setScene(scenes[SceneType.road.ordinal()]);
+        locations[5][3].setScene(scenes[SceneType.road.ordinal()]);
+        locations[5][4].setScene(scenes[SceneType.finish.ordinal()]);
     }
 
-    private static RegSceneType[] createScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*****************************************************************/
-    
+   
+
+   
 }
+*/
