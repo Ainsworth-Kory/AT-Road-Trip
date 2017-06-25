@@ -135,9 +135,9 @@ public class GameControl {
         locations[5][4].setScene(scenes[SceneType.finish.ordinal()]);
     }
 
-
+     // Need to implement this stub funtion
     static void assignScenesToLocations(Map map, Scene[] scenes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         System.out.println("\nassignScenesToLocations() called.");
     }
    
 

@@ -116,12 +116,12 @@ public class Game implements Serializable{
         return null;
     }*/
 
+    /*public void setDay(Day day) {
+        this.day = day;
+    }*/    
+
     public void setDay(Day day) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** called setDay() in Game.java");
+
     }
-    
-    
-    
-    
-    
 }
