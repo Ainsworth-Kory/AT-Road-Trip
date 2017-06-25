@@ -11,10 +11,12 @@ import byui.cit260.atRoadTrip1.model.Day;
 import byui.cit260.atRoadTrip1.model.Game;
 import byui.cit260.atRoadTrip1.model.InventoryItem;
 import byui.cit260.atRoadTrip1.model.Item;
+import byui.cit260.atRoadTrip1.model.Location;
 import byui.cit260.atRoadTrip1.model.Map;
 import byui.cit260.atRoadTrip1.model.Player;
 import byui.cit260.atRoadTrip1.model.RegSceneType;
 import byui.cit260.atRoadTrip1.model.Scene;
+import byui.cit260.atRoadTrip1.model.SceneType;
 
 
 /**
@@ -45,7 +47,7 @@ public class GameControl {
          Map map = MapControl.createMap();//create and initialize new map
          game.setMap(map); //save map in game
     
-    /*     MapControl.moveActorsToStartingLocation(map);  */
+        MapControl.moveActorsToStartingLocation(map);  
     }
 
     
@@ -94,8 +96,10 @@ public class GameControl {
         
         return inventory;         
     }
-/*
-    static void assignScenesToLocations(Map map, Scene[] scenes) {
+    
+    
+
+   private static void assignScenesToLocations(Map map, SceneType[] scenes) {
         Location[][] locations = map.getLocations();
         
         //start point
@@ -130,7 +134,7 @@ public class GameControl {
         locations[5][3].setScene(scenes[SceneType.road.ordinal()]);
         locations[5][4].setScene(scenes[SceneType.finish.ordinal()]);
     }
-*/
+
 
     static void assignScenesToLocations(Map map, Scene[] scenes) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

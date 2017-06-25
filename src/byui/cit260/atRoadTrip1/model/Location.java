@@ -19,7 +19,7 @@ public class Location implements Serializable{
     private int column;
     private int visited;
     private int amountRemaining;
-    private RegSceneType scene;
+    private SceneType scene;//changed from RegSceneType scene;
     private ArrayList<Actor> actors;
 
     
@@ -55,12 +55,12 @@ public class Location implements Serializable{
     public void setAmountRemaining(int amountRemaining) {
         this.amountRemaining = amountRemaining;
     }
-
-    public RegSceneType getScene() {
+//changed from public RegSceneType getScene()6/25/17
+    public SceneType getScene() {
         return scene;
     }
-
-    public void setScene(RegSceneType scene) {
+// changed from public void setScene(RegSceneType scene)6/25/17
+    public void setScene(SceneType scene) {
         this.scene = scene;
     }
     

@@ -8,6 +8,7 @@ package byui.cit260.atRoadTrip1.control;
 import byui.cit260.atRoadTrip1.model.Location;
 import byui.cit260.atRoadTrip1.model.Map;
 import byui.cit260.atRoadTrip1.model.Scene;
+import byui.cit260.atRoadTrip1.model.SceneType;
 
 
 /**
@@ -30,10 +31,10 @@ public static Map createMap() {
         return map;
         
     }
-    /*
+    
     private static Scene[] createScenes() {
         
-        Scene[] scenes = new Scene[Scene.values().length];
+        Scene[] scenes = new Scene[SceneType.values().length];
         
         Scene startingScene = new Scene();
         startingScene.setDescription(
@@ -41,7 +42,7 @@ public static Map createMap() {
                   + "very first step.");
         startingScene.setMapSymbol(" ST ");
         startingScene.setBlocked(false);
-        scenes[Scene.start.ordinal()] = startingScene;
+        scenes[SceneType.start.ordinal()] = startingScene;
               
         
         Scene finishScene = new Scene();
@@ -49,7 +50,7 @@ public static Map createMap() {
                     "Congratulations! You survived your road trip!");
         finishScene.setMapSymbol(" FN ");
         finishScene.setBlocked(false);
-        scenes[Scene.finish.ordinal()] = finishScene;        
+        scenes[SceneType.finish.ordinal()] = finishScene;        
         
         
         Scene roadScene = new Scene();
@@ -57,7 +58,7 @@ public static Map createMap() {
                     "This is the road where you will be driving. Keep both eyes on it!");
         roadScene.setMapSymbol(" RD ");
         roadScene.setBlocked(false);
-        scenes[Scene.road.ordinal()] = roadScene;  
+        scenes[SceneType.road.ordinal()] = roadScene;  
         
         return scenes;
     }
@@ -68,5 +69,5 @@ public static Map createMap() {
         System.out.println("\n *** Move actors to start locations ***");
         
     }
-    */
+    
 }
