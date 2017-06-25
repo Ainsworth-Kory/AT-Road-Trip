@@ -13,6 +13,8 @@ public enum Item {
     gas,
     cash,
     time,
-    distance;
-    
+    distance;    
 }
+// No attributes needed to be defined in the Item enum
+// list so we did not need to create an overloaded constructor function or
+// “getter” functions.

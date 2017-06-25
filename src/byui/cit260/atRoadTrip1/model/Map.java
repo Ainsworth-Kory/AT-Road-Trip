@@ -6,25 +6,22 @@
 package byui.cit260.atRoadTrip1.model;
 
 import byui.cit260.atRoadTrip1.control.GameControl;
-import byui.cit260.atRoadTrip1.model.RegSceneType.SceneType;
 import java.io.Serializable;
 import java.util.Objects;
-import javafx.scene.Scene;
+
 
 /**
  *
  * @author Kory
  */
-public class Map implements Serializable{
-
-    
+public class Map implements Serializable{    
     
     // class instance variables
     private String description;
-    private int rowCount;
+/*    private int rowCount;
     private int columnCount;
     private int currentRow;
-    private int currentColumn;
+    private int currentColumn; */
     private Location[][] locations;
     private int noOfRows;
     private int noOfColumns;
@@ -37,8 +34,7 @@ public class Map implements Serializable{
         this.locations = locations;
     }
 
-    public Map() {
-         
+    public Map() {         
     }
     
     public Map(int noOfRows, int noOfColumns){
@@ -49,23 +45,22 @@ public class Map implements Serializable{
       }
          this.noOfRows = noOfRows;
          this.noOfColumns = noOfColumns;
-        Location[][][][] newLocation = null;
-         
+                 
          //create 2-D array for location of objects
-         this.locations = newLocation[noOfRows][noOfColumns];
+         this.locations = new Location[noOfRows][noOfColumns];
          
          for (int row = 0; row < noOfRows; row++){
              for (int column = 0; column < noOfColumns; column++){
-         // create and initialize new location object instance
-         Location location = new Location();
-         location.setColumn(column);
-         location.setRow(row);
-         location.setVisited(false);
+                // create and initialize new location object instance
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
          
-         // assign the location object to the current position in array
-         locations[row][column] = location;
-         }
-      }       
+                // assign the location object to the current position in array
+                locations[row][column] = location;
+            }
+        }       
    }
     
     
@@ -79,7 +74,7 @@ public class Map implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
-
+    /*
     public int getRowCount() {
         return rowCount;
     }
@@ -111,7 +106,7 @@ public class Map implements Serializable{
     public void setCurrentColumn(int currentColumn) {
         this.currentColumn = currentColumn;
     }
-
+    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -154,7 +149,7 @@ public class Map implements Serializable{
         }
         return true;
     }
-    
+    */
     
     
     

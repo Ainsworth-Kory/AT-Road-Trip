@@ -76,11 +76,7 @@ public class RegSceneType implements Serializable{
         return true;
     }
     
-    public enum SceneType {
-        start,
-        road,
-        finish;
-    }
+    
     
     
 }

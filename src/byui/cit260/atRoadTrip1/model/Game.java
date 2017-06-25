@@ -68,10 +68,10 @@ public class Game implements Serializable{
     public void setCar(Car car) {
         this.car = car;
     }
-    
+    /*
     public Game() {
     }
-    
+    */
 
     public double getTime() {
         return time;

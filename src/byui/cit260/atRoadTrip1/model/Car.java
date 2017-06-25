@@ -22,9 +22,7 @@ public class Car implements Serializable{
     public Car() {
         
         this.description = "\nFerrari Enzo";
-    }
-    
-    
+    }    
 
     public int getSpeed() {
         return speed;

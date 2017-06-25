@@ -14,8 +14,8 @@ import byui.cit260.atRoadTrip1.model.Item;
 import byui.cit260.atRoadTrip1.model.Map;
 import byui.cit260.atRoadTrip1.model.Player;
 import byui.cit260.atRoadTrip1.model.RegSceneType;
-import byui.cit260.atRoadTrip1.model.RegSceneType.SceneType;
-import javafx.scene.Scene;
+import byui.cit260.atRoadTrip1.model.Scene;
+
 
 /**
  *
@@ -45,7 +45,7 @@ public class GameControl {
          Map map = MapControl.createMap();//create and initialize new map
          game.setMap(map); //save map in game
     
-         MapControl.moveActorsToStartingLocation(map);
+    /*     MapControl.moveActorsToStartingLocation(map);  */
     }
 
     
@@ -69,33 +69,32 @@ public class GameControl {
         InventoryItem[] inventory = new InventoryItem[4];
         
         InventoryItem gas = new InventoryItem();
-        gas.setInvType("gas");
+        gas.setInvType("Gas");
         gas.setQtyInStock(10);
         gas.setReqAmt(10);
         inventory[Item.gas.ordinal()] = gas;
         
         InventoryItem cash = new InventoryItem();
-        cash.setInvType("cash");
+        cash.setInvType("Cash");
         cash.setQtyInStock(500);
         cash.setReqAmt(500);
         inventory[Item.cash.ordinal()] = cash;
         
         InventoryItem time = new InventoryItem();
-        time.setInvType("time");
+        time.setInvType("Time");
         time.setQtyInStock(30);
         time.setReqAmt(30);
         inventory[Item.time.ordinal()] = time;
         
         InventoryItem distance = new InventoryItem();
-        distance.setInvType("distance");
+        distance.setInvType("Distance");
         distance.setQtyInStock(2000);
         distance.setReqAmt(2000);
-        inventory[Item.distance.ordinal()] = distance;
+        inventory[Item.distance.ordinal()] = distance;        
         
-        
-       return inventory;         
+        return inventory;         
     }
-
+/*
     static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
         
@@ -131,9 +130,12 @@ public class GameControl {
         locations[5][3].setScene(scenes[SceneType.road.ordinal()]);
         locations[5][4].setScene(scenes[SceneType.finish.ordinal()]);
     }
+*/
 
+    static void assignScenesToLocations(Map map, Scene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
 
    
 }
-*/

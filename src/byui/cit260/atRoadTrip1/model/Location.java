@@ -20,22 +20,9 @@ public class Location implements Serializable{
     private int visited;
     private int amountRemaining;
     private RegSceneType scene;
-
-    public RegSceneType getScene() {
-        return scene;
-    }
-
-    public void setScene(RegSceneType scene) {
-        this.scene = scene;
-    }
-    
     private ArrayList<Actor> actors;
 
-    public Location() {
-    }
     
-    
-
     public int getRow() {
         return row;
     }
@@ -60,6 +47,7 @@ public class Location implements Serializable{
         this.visited = visited;
     }
 
+    
     public int getAmountRemaining() {
         return amountRemaining;
     }
@@ -68,6 +56,23 @@ public class Location implements Serializable{
         this.amountRemaining = amountRemaining;
     }
 
+    public RegSceneType getScene() {
+        return scene;
+    }
+
+    public void setScene(RegSceneType scene) {
+        this.scene = scene;
+    }
+    
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public void setActors(ArrayList<Actor> actors) {
+        this.actors = actors;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 7;

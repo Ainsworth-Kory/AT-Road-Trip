@@ -7,9 +7,8 @@ package byui.cit260.atRoadTrip1.control;
 
 import byui.cit260.atRoadTrip1.model.Location;
 import byui.cit260.atRoadTrip1.model.Map;
-import byui.cit260.atRoadTrip1.model.RegSceneType;
-import byui.cit260.atRoadTrip1.model.RegSceneType.SceneType;
-import javafx.scene.Scene;
+import byui.cit260.atRoadTrip1.model.Scene;
+
 
 /**
  *
@@ -17,24 +16,24 @@ import javafx.scene.Scene;
  */
 public class MapControl {
 
- /* 
-private static Map createMap() {
+ 
+public static Map createMap() {
         // create the map
         Map map = new Map(5, 6);
         
         // create the scenes for the game
-
-       Scene[] scenes = createScenes(); 
+    /*    Scene[] scenes = createScenes();
         
         // assign scenes to locations
         GameControl.assignScenesToLocations(map, scenes);
-        
+    */    
         return map;
-         
+        
     }
-
+    /*
     private static Scene[] createScenes() {
-        Scene[] scenes = new Scene[SceneType.values().length];
+        
+        Scene[] scenes = new Scene[Scene.values().length];
         
         Scene startingScene = new Scene();
         startingScene.setDescription(
@@ -42,7 +41,7 @@ private static Map createMap() {
                   + "very first step.");
         startingScene.setMapSymbol(" ST ");
         startingScene.setBlocked(false);
-        scenes[SceneType.start.ordinal()] = startingScene;
+        scenes[Scene.start.ordinal()] = startingScene;
               
         
         Scene finishScene = new Scene();
@@ -50,7 +49,7 @@ private static Map createMap() {
                     "Congratulations! You survived your road trip!");
         finishScene.setMapSymbol(" FN ");
         finishScene.setBlocked(false);
-        scenes[SceneType.finish.ordinal()] = finishScene;        
+        scenes[Scene.finish.ordinal()] = finishScene;        
         
         
         Scene roadScene = new Scene();
@@ -58,15 +57,16 @@ private static Map createMap() {
                     "This is the road where you will be driving. Keep both eyes on it!");
         roadScene.setMapSymbol(" RD ");
         roadScene.setBlocked(false);
-        scenes[SceneType.road.ordinal()] = roadScene;  
+        scenes[Scene.road.ordinal()] = roadScene;  
         
         return scenes;
     }
-    */
+  
     
    
     static void moveActorsToStartingLocation(Map map) {
         System.out.println("\n *** Move actors to start locations ***");
         
     }
+    */
 }
