@@ -6,6 +6,7 @@
 package byui.cit260.atRoadTrip1.control;
 
 import atroadtrip1.AtRoadTrip1;
+import byui.cit260.atRoadTrip1.exceptions.GameControlException;
 import byui.cit260.atRoadTrip1.model.Car;
 import byui.cit260.atRoadTrip1.model.Day;
 import byui.cit260.atRoadTrip1.model.Game;
@@ -51,10 +52,13 @@ public class GameControl {
     }
 
     
-    public static Player createPlayer(String name) {
+    public static Player createPlayer(String name) throws GameControlException {
         
+        if (name.length() < 2){
+           throw new GameControlException("Player name must be greater than one character") ;
+        }
         if (name == null) {
-            return null;
+            throw new GameControlException("Player name cannot be blank");
         }
         
         Player player = new Player();

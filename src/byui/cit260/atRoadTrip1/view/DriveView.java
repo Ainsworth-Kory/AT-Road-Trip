@@ -60,6 +60,7 @@ public class DriveView extends View{
           }
             return value; // return the value entered
  }*/
+    
      @Override
      public boolean doAction(String value){        
             
@@ -140,9 +141,8 @@ public class DriveView extends View{
                 break;
                 
             case "Q": // quit and return to game menu 
-                this.displayQuitDriveView();
                 break;
-                
+            
             default:
                 System.out.println("\n*** Invalid Selection *** Try Again");
                rtnValue = false;
@@ -150,6 +150,8 @@ public class DriveView extends View{
         }
             return rtnValue;
      }
+
+
             private void displayBanner() {
         
         System.out.println(
