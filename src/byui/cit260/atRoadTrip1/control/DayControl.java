@@ -4,17 +4,17 @@
  * and open the template in the editor.
  */
 package byui.cit260.atRoadTrip1.control;
-
+import byui.cit260.atRoadTrip1.exceptions.DayControlException;
 /**
  *
  * @author whitbillman
  */
 public class DayControl {
     
-   public int calcTotalDays (int prevDays) {
-   
+   public int calcTotalDays (int prevDays) throws DayControlException {
+                    
             if (prevDays < 0) { // This is an entry error
-                return -111;
+                throw new DayControlException("Previous days must be greater than 0.");
            
             }
    

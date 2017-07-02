@@ -141,6 +141,7 @@ public class DriveView extends View{
                 break;
                 
             case "Q": // quit and return to game menu 
+                this.displayQuitDriveView();
                 break;
             
             default:
