@@ -9,7 +9,6 @@ import byui.cit260.atRoadTrip1.control.GameControl;
 import java.io.Serializable;
 import java.util.Objects;
 
-
 /**
  *
  * @author Kory
