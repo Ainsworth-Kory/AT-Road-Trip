@@ -11,7 +11,7 @@ package byui.cit260.atRoadTrip1.view;
  */
 
 public class DoubleView {
- 
+ /*
   public static void main (String[] args){
 //throws java.io.IOException{ 
        
@@ -37,6 +37,6 @@ public class DoubleView {
     private String getInput() {
          System.out.println("\nGet Input");
         return null;
-    }
+    } */
     
 }

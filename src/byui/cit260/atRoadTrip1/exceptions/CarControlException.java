@@ -7,27 +7,28 @@ package byui.cit260.atRoadTrip1.exceptions;
 
 /**
  *
- * @author Ian Tabeling
+ * @author Kory
  */
-public class NumberFormatException extends Exception {
+public class CarControlException extends Exception{
 
-    public NumberFormatException() {
+    public CarControlException() {
     }
 
-    public NumberFormatException(String string) {
+    public CarControlException(String string) {
         super(string);
     }
 
-    public NumberFormatException(String string, Throwable thrwbl) {
+    public CarControlException(String string, Throwable thrwbl) {
         super(string, thrwbl);
     }
 
-    public NumberFormatException(Throwable thrwbl) {
+    public CarControlException(Throwable thrwbl) {
         super(thrwbl);
     }
 
-    public NumberFormatException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
+    public CarControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
         super(string, thrwbl, bln, bln1);
     }
+    
     
 }
