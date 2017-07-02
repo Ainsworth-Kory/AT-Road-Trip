@@ -21,44 +21,24 @@ public class Game implements Serializable{
     private Day[] day;
     private Menu[] menu;
     private Map map;
-
-    public Map getMap() {
-        return map;
+    /*
+    public Game() {
+    }
+    */
+    public double getTime() {
+        return time;
     }
 
-    public void setMap(Map map) {
-        this.map = map;
+    public void setTime(double time) {
+        this.time = time;
     }
-    
-     public Player getPlayer() {
+
+    public Player getPlayer() {
         return player;
     }
 
     public void setPlayer(Player player) {
         this.player = player;
-    }
-    public Menu[] getMenu() {
-        return menu;
-    }
-
-    public void setMenu(Menu[] menu) {
-        this.menu = menu;
-    }
-
-    public Day[] getDay() {
-        return day;
-    }
-
-    public void setDay(Day[] day) {
-        this.day = day;
-    }
-
-    public InventoryItem[] getInventory() {
-        return inventory;
-    }
-
-    public void setInventory(InventoryItem[] inventory) {
-        this.inventory = inventory;
     }
     
     public Car getCar() {
@@ -68,19 +48,39 @@ public class Game implements Serializable{
     public void setCar(Car car) {
         this.car = car;
     }
-    /*
-    public Game() {
-    }
-    */
-
-    public double getTime() {
-        return time;
+    
+    public InventoryItem[] getInventory() {
+        return inventory;
     }
 
-    public void setTime(double time) {
-        this.time = time;
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
+    }
+    
+    public Day[] getDay() {
+        return day;
     }
 
+    public void setDay(Day[] day) {
+        this.day = day;
+    }
+    
+    public Menu[] getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu[] menu) {
+        this.menu = menu;
+    }
+    
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -116,12 +116,12 @@ public class Game implements Serializable{
         return null;
     }*/
 
+    /*public void setDay(Day day) {
+        this.day = day;
+    }*/    
+
     public void setDay(Day day) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("*** called setDay() in Game.java");
+
     }
-    
-    
-    
-    
-    
 }

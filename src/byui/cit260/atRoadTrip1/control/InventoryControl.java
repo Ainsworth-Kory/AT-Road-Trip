@@ -5,24 +5,26 @@
  */
 package byui.cit260.atRoadTrip1.control;
 
+import byui.cit260.atRoadTrip1.exceptions.InventoryControlException;
+
 /**
  *
  * @author whitbillman
  */
 public class InventoryControl {
     // @author Ian Tabeling
-    public double calcGasUsed(double previousGas, double speed, double mpg) {
+    public double calcGasUsed(double previousGas, double speed, double mpg) throws InventoryControlException {
        
         if (previousGas < 0) { // previousGas cannot be negative
-            return -9999; 
+            throw new InventoryControlException("Gas volume cannot be negative"); 
         }
         
         if (previousGas > 10) { //prviousGas cannot be gretaer than 10
-            return -8888;
+            throw new InventoryControlException("Gas volume cannot be greater than 10 gallons");
         }
         
         if (speed > 95) {
-            return -555;
+            throw new InventoryControlException("Speed cannot be greater than 95");
         }
        double gasUsed = speed / mpg;
        
