@@ -31,7 +31,23 @@ public class TripInfoView extends View{
     }
 
     public static TripInfoView getgameReport() {
-        System.out.println("****getGameReport***");
+        System.out.println("\n"
+                  + "\n--------------------------------------"
+                  + "\n           List of Trip Info                 "
+                  + "\n--------------------------------------"
+                  + "\nV - View Trip Info"
+                  + "\nD - Drive"
+                  + "\nC - Count Cash"
+                  + "\nG - Stop for gas"
+                  + "\nF - Stop for food"
+                  + "\nP - Stop for food & gas"
+                  + "\nM - Stop for motel"
+                  + "\nS - Save Game"
+                  + "\nH - Help Menu"
+                  + "\nR - Print Game Report"
+                  + "\nQ - Quit"
+                  + "\n--------------------------------------");
+   
             return null;
         
          //To change body of generated methods, choose Tools | Templates.
