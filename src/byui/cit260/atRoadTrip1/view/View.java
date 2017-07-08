@@ -5,6 +5,9 @@
  */
 package byui.cit260.atRoadTrip1.view;
 
+import atroadtrip1.AtRoadTrip1;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -17,6 +20,10 @@ public abstract class View implements ViewInterface {
    // public String getInput();
     
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = AtRoadTrip1.getInFile();
+    protected final PrintWriter console = AtRoadTrip1.getOutFile();
+    
     
     public View(){
         

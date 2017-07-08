@@ -38,6 +38,17 @@ public class AtRoadTrip1 {
     private static Player player = null;
 
     private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        AtRoadTrip1.logFile = logFile;
+    }
 
     public static PrintWriter getOutFile() {
         return outFile;
@@ -54,7 +65,6 @@ public class AtRoadTrip1 {
     public static void setInFile(BufferedReader inFile) {
         AtRoadTrip1.inFile = inFile;
     }
-    private static BufferedReader inFile = null;
     
      public static Game getCurrentGame() {
         return currentGame;
@@ -77,10 +87,14 @@ public class AtRoadTrip1 {
     public static void main(String[] args) {
        
         try {
+            // open character stream files for end user input and output
             AtRoadTrip1.inFile = 
                     new BufferedReader(new InputStreamReader(System.in));
             AtRoadTrip1.outFile = new PrintWriter(System.out, true);
         
+            // open log file
+            String filePath = "log.txt";
+            AtRoadTrip1.logFile = new PrintWriter(filePath);
        
         // create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
@@ -88,7 +102,7 @@ public class AtRoadTrip1 {
             //startProgramView.display();
             return;
             
-        } catch (Throwable e){
+        } catch (Exception e){
              System.out.println("Exception: " + e.toString() +
                                 "\nCause: " + e.getCause() +
                                  "\nMessage " + e.getMessage());
@@ -103,10 +117,13 @@ public class AtRoadTrip1 {
         finally {
             try {
                 if (AtRoadTrip1.inFile != null)
-                AtRoadTrip1.inFile.close();
+                    AtRoadTrip1.inFile.close();
                 
                 if (AtRoadTrip1.outFile != null)
-                AtRoadTrip1.outFile.close();
+                    AtRoadTrip1.outFile.close();
+                
+                if (AtRoadTrip1.logFile != null)
+                    AtRoadTrip1.logFile.close();
             } catch (IOException ex) {
                 System.out.println("Error closing files");
                 return;
