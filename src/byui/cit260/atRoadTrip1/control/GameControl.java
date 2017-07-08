@@ -18,6 +18,8 @@ import byui.cit260.atRoadTrip1.model.Player;
 import byui.cit260.atRoadTrip1.model.RegSceneType;
 import byui.cit260.atRoadTrip1.model.Scene;
 import byui.cit260.atRoadTrip1.model.SceneType;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 
 /**
@@ -143,6 +145,23 @@ public class GameControl {
   
     static void assignScenesToLocations(Map map, Scene[] scenes) {
        System.out.println("\nassignScenesToLocations() called.");
+    }
+
+    public static void saveGame(Game game, String filepath)
+        throws GameControlException {
+        
+      try( FileOutputStream fops = new FileOutputStream(filepath)) {
+          ObjectOutputStream output = new ObjectOutputStream(fops);
+          
+           output.writeObject(game); // write the gae object out to file
+      }
+      catch(Exception e){
+          throw new GameControlException(e.getMessage());
+      }
+    }
+
+    public static void getExisitingGame(String filePath) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
 

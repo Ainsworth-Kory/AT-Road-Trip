@@ -21,8 +21,9 @@ public class MainMenuView extends View {
                   + "\n            Main Menu                 "
                   + "\n--------------------------------------"
                   + "\nN - Start new game"
-                  + "\nR - Restart existing game"
+                  + "\nG - Get and Start saved game"
                   + "\nH - Get help on how to play the game"
+                  + "\nS - Save game"
                   + "\nQ - Quit"
                   + "\n--------------------------------------");
     
@@ -78,14 +79,19 @@ public class MainMenuView extends View {
             case "N": // create and start new game
                 this.startNewGame();
                 break;
-            case "R": // get and start an existing game
+            case "G": // create and start new game
                 this.startExistingGame();
                 break;
             case "H": // display the help menu
                 this.displayHelpMenuView();
                 break;
+            case "S": // create and start new game
+                this.saveGame();
+                break;
+            case "Q": // create and start new game
+                return true;
             default:
-                this.console.println("\n*** Invalid Selection *** Try Again");
+                ErrorView.display("\n*** Invalid Selection *** Try Again");
                rtnValue = false;
                 break;
         }
@@ -102,13 +108,39 @@ public class MainMenuView extends View {
         gameMenuView.display(); //GameMenuView
      }
     private void startExistingGame(){
-        this.console.println("*** startExistingGame function called ***");
+        this.console.println("\n\nEnter the file path for where game "
+                             + "file is saved");
+        
+        String filePath = this.getInput();
+        
+        try {
+            //start a saved game
+            GameControl.getExisitingGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
     
      void displayHelpMenuView(){
         // display help menu
        HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display(); //HelpMenuView
+    }
+
+    private void saveGame() {
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file path for where the game"
+                            + "is to be saved");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(AtRoadTrip1.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
     }
   }
 

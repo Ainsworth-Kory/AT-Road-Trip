@@ -114,7 +114,7 @@ public class StartProgramView extends View {
         
         return true; // success !
     }
-
+   
     private void displayNextView(Player player) {
         // display a custom welcome message
         this.console.println("\n=============================================="
