@@ -71,7 +71,7 @@ public class GameMenuView extends View{
                 this.displayQuitHelp();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                ErrorView.display("\n*** Invalid Selection *** Try Again");
                rtnValue = false;
                 break;
         }

@@ -29,7 +29,7 @@ public class StartProgramView extends View {
     }
 
     private void displayBanner() {
-        System.out.println(
+        this.console.println(
                 "\n*************************************************"
               + "\n*                                               *"
               + "\n* Hello! Are you ready to start your road trip? *"  
@@ -117,7 +117,7 @@ public class StartProgramView extends View {
 
     private void displayNextView(Player player) {
         // display a custom welcome message
-        System.out.println("\n=============================================="
+        this.console.println("\n=============================================="
                           + "\n Welcome to the Road Trip " + player.getName()
                           + "\n We hope you enjoy the ride!"
                           + "\n============================================="

@@ -20,6 +20,7 @@ import byui.cit260.atRoadTrip1.model.Motel;
 import byui.cit260.atRoadTrip1.model.Player;
 import byui.cit260.atRoadTrip1.model.Question;
 import byui.cit260.atRoadTrip1.model.RegSceneType;
+import byui.cit260.atRoadTrip1.view.ErrorView;
 import byui.cit260.atRoadTrip1.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -103,7 +104,7 @@ public class AtRoadTrip1 {
             return;
             
         } catch (Exception e){
-             System.out.println("Exception: " + e.toString() +
+             ErrorView.display("Exception: " + e.toString() +
                                 "\nCause: " + e.getCause() +
                                  "\nMessage " + e.getMessage());
                 e.printStackTrace();;
@@ -125,7 +126,7 @@ public class AtRoadTrip1 {
                 if (AtRoadTrip1.logFile != null)
                     AtRoadTrip1.logFile.close();
             } catch (IOException ex) {
-                System.out.println("Error closing files");
+                ErrorView.display("Error closing files");
                 return;
             }
          

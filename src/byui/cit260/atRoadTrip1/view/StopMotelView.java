@@ -77,7 +77,7 @@ public class StopMotelView extends View{
                 this.displayQuitStopMotel();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                this.console.println("\n*** Invalid Selection *** Try Again");
                rtnValue = false;
                 break;
         }
@@ -85,7 +85,7 @@ public class StopMotelView extends View{
      }
             private void displayBanner() {
         
-        System.out.println(
+        this.console.println(
                 "\n**************************************"
               + "\n*                                    *"
               + "\n*  Welcome to Road Trip Inn!         *"
@@ -95,7 +95,7 @@ public class StopMotelView extends View{
     }
               
     private void displayStopMotel() {
-         System.out.println("\nThank you for staying at the Road Trip Inn!");
+         this.console.println("\nThank you for staying at the Road Trip Inn!");
                         
     }
     

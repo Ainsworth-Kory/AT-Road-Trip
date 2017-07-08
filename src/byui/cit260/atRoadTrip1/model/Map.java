@@ -6,6 +6,7 @@
 package byui.cit260.atRoadTrip1.model;
 
 import byui.cit260.atRoadTrip1.control.GameControl;
+import byui.cit260.atRoadTrip1.view.ErrorView;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -40,7 +41,7 @@ public class Map implements Serializable{
     public Map(int noOfRows, int noOfColumns){
     
       if (noOfRows < 1 || noOfColumns < 1){
-          System.out.println("The number of rows and columns must be > 1");
+          ErrorView.display("The number of rows and columns must be > 1");
           return;
       }
          this.noOfRows = noOfRows;

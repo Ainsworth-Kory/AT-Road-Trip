@@ -85,7 +85,7 @@ public class MainMenuView extends View {
                 this.displayHelpMenuView();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                this.console.println("\n*** Invalid Selection *** Try Again");
                rtnValue = false;
                 break;
         }
@@ -102,7 +102,7 @@ public class MainMenuView extends View {
         gameMenuView.display(); //GameMenuView
      }
     private void startExistingGame(){
-        System.out.println("*** startExistingGame function called ***");
+        this.console.println("*** startExistingGame function called ***");
     }
     
      void displayHelpMenuView(){

@@ -5,6 +5,7 @@
  */
 package byui.cit260.atRoadTrip1.control;
 
+import byui.cit260.atRoadTrip1.exceptions.CarControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class CarControlTest {
      * Test of calcTotalMiles method, of class CarControl.
      */
     @Test
-    public void testCalcTotalMiles() {
+    public void testCalcTotalMiles() throws CarControlException {
         System.out.println("calcTotalMiles");
         
         /* Test case #1 */

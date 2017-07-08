@@ -33,7 +33,7 @@ public class CalcCashView extends View{
                 this.displayQuitStopCash();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                ErrorView.display("\n*** Invalid Selection *** Try Again");
                rtnValue = false;
                 break;
         }

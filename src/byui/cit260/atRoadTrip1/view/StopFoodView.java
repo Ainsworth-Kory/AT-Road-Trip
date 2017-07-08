@@ -77,7 +77,7 @@ public class StopFoodView extends View{
                 this.displayQuitStopFood();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                this.console.println("\n*** Invalid Selection *** Try Again");
                rtnValue = false;
                 break;
         }
@@ -87,7 +87,7 @@ public class StopFoodView extends View{
     
     private void displayBanner() {
         
-        System.out.println(
+        this.console.println(
                 "\n***********************************"
               + "\n*                                 *"
               + "\n*     Welcome to Chuck-n-Go!      *"
@@ -98,7 +98,7 @@ public class StopFoodView extends View{
 
     
     private void displayBuyFood() {
-        System.out.println("\n*** displayBuyFood() function called ***"
+        this.console.println("\n*** displayBuyFood() function called ***"
                         + "\nYou just purchased food at a cost of $25.00."
                         );
     }

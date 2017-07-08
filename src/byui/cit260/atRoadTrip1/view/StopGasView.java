@@ -77,7 +77,7 @@ public class StopGasView extends View{
                 this.displayQuitStopGas();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                this.console.println("\n*** Invalid Selection *** Try Again");
                rtnValue = false;
                 break;
         }
@@ -86,7 +86,7 @@ public class StopGasView extends View{
         
     private void displayBanner() {
         
-        System.out.println(
+        this.console.println(
                 "\n***********************************"
               + "\n*                                 *"
               + "\n*     Welcome to Gas-o-Rama!      *"
@@ -101,12 +101,12 @@ public class StopGasView extends View{
     }
     */
     private String stopGasOption() {  // What does this do??
-        System.out.println("\n*** stopGasOption string displayed ***");
+        this.console.println("\n*** stopGasOption string displayed ***");
         return "Thank You!";
     }
     
     private void displayBuyGas() {
-        System.out.println("\n*** displayBuyGas() function called ***"
+        this.console.println("\n*** displayBuyGas() function called ***"
                         + "\nYou just purchased xx.x gallons of gas at a cost of $xx.xx."
                         );
     }
