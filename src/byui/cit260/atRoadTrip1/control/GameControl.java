@@ -46,9 +46,10 @@ public class GameControl {
          Car car = new Car();//create new car
          game.setCar(car);// save car in game
          
-         Day day = new Day();// create new day
+         // *******commented out 7/8/17********
+         /*Day day = new Day();// create new day
          game.setDay(day);// save day in game
-         
+         */
          Map map = MapControl.createMap();//create and initialize new map
          game.setMap(map); //save map in game
     
@@ -146,7 +147,7 @@ public class GameControl {
      // Need to implement this stub funtion
   
     static void assignScenesToLocations(Map map, Scene[] scenes) {
-       System.out.println("\nassignScenesToLocations() called.");
+       System.out.println("\nAssignScenesToLocations() called.");
     }
 
     public static void saveGame(Game game, String filepath)

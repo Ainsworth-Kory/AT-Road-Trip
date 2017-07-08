@@ -101,12 +101,12 @@ public class AtRoadTrip1 {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
             //startProgramView.display();
-            return;
+            //return;
             
         } catch (Exception e){
-             ErrorView.display("Exception: " + e.toString() +
-                                "\nCause: " + e.getCause() +
-                                 "\nMessage " + e.getMessage());
+             ErrorView.display("Exception: " + e.toString() 
+                               + "\nCause: " + e.getCause() 
+                               + "\nMessage " + e.getMessage());
                 e.printStackTrace();;
                           
            /*System.out.println(e.getMessage());

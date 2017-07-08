@@ -27,8 +27,19 @@ public class ErrorView {
         // log error
         logFile.println(className + " - " + errorMessage);
     }
+// *****************Commented out 7/8/17************************************
+    /*public static void display(String string) {
+    errorFile.println(
+                     "--------------------------------------"
+                    + "\n- Error - " + errorMessageIan
+                    + "\n-----------------------------------");
+        
+        // log error
+        logFile.println(className + " - " + errorMessage);
+        
+    }*/
 
-    public static void display(String string) {
+   public static void display(String _Invalid_Selection__Try_Again) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -97,7 +97,7 @@ public class StartProgramView extends View {
             return false;
         }*/
         // call createPlayer() control function
-        Player player;
+        Player player = null;
         try {
             player = GameControl.createPlayer(playersName);
         } catch (GameControlException ex) {
@@ -109,8 +109,8 @@ public class StartProgramView extends View {
             return false;
         }*/
         
-        // display next view
-        //this.displayNextView(player);
+        //display next view
+        this.displayNextView(player);
         
         return true; // success !
     }

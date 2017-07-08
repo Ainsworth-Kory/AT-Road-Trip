@@ -119,9 +119,9 @@ public class Game implements Serializable{
     /*public void setDay(Day day) {
         this.day = day;
     }*/    
+// ********commented out 7/8/17***************
+    //public void setDay(Day day) {
+        //System.out.println("*** called setDay() in Game.java");
 
-    public void setDay(Day day) {
-        System.out.println("*** called setDay() in Game.java");
-
-    }
+    //}
 }
