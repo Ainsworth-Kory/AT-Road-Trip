@@ -5,6 +5,7 @@
  */
 package byui.cit260.atRoadTrip1.view;
 
+import byui.cit260.atRoadTrip1.model.Game;
 import java.util.Scanner;
 
 /**
