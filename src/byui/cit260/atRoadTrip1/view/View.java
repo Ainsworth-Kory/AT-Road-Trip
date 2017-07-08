@@ -52,17 +52,17 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
         
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
+        //Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         boolean valid = false; // initialize to not valid
         String value = null; // value to be returned
-        
+        try {
         //loop while an invalid value is enter
         while (!valid) { 
             
             System.out.println("\n" + this.displayMessage);
             
             // get the next line typed on the keyboard
-            value = keyboard.nextLine(); 
+            value = this.keyboard.readLine(); 
             value = value.trim(); // trim off the leading and trailing blanks
             
             if (value.length() < 1){//if the value is blank
@@ -73,7 +73,9 @@ public abstract class View implements ViewInterface {
             
              break; // end the loop
           }
-        
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+        }
             return value; // return the value entered
     }
     
