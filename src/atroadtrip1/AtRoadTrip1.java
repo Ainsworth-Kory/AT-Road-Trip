@@ -22,8 +22,11 @@ import byui.cit260.atRoadTrip1.model.Question;
 import byui.cit260.atRoadTrip1.model.RegSceneType;
 import byui.cit260.atRoadTrip1.view.StartProgramView;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -77,25 +80,38 @@ public class AtRoadTrip1 {
             AtRoadTrip1.inFile = 
                     new BufferedReader(new InputStreamReader(System.in));
             AtRoadTrip1.outFile = new PrintWriter(System.out, true);
-        } catch (Exception e) {
-            
-            System.out.println("Exception: " + e.toString() +
-                                "\nCause: " + e.getCause() +
-                                 "\nMessage " + e.getMessage());
-                                                           
-            e.printStackTrace();
-        }
+        
+       
         // create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
-        
-       
-            startProgramView.display();
+            //startProgramView.display();
             return;
-                  catch (Throwable e){
-            System.out.println(e.getMessage());
+            
+        } catch (Throwable e){
+             System.out.println("Exception: " + e.toString() +
+                                "\nCause: " + e.getCause() +
+                                 "\nMessage " + e.getMessage());
+                e.printStackTrace();;
+                          
+           /*System.out.println(e.getMessage());
             e.printStackTrace();
-            startProgramView.display();
+            startProgramView.display();*/
+                           
+        }
+        
+        finally {
+            try {
+                if (AtRoadTrip1.inFile != null)
+                AtRoadTrip1.inFile.close();
+                
+                if (AtRoadTrip1.outFile != null)
+                AtRoadTrip1.outFile.close();
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
+         
         }
     }   
 
