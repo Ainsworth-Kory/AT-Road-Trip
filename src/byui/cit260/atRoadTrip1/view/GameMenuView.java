@@ -6,6 +6,7 @@
 package byui.cit260.atRoadTrip1.view;
 
 import atroadtrip1.AtRoadTrip1;
+import static atroadtrip1.AtRoadTrip1.getgameReport;
 import byui.cit260.atRoadTrip1.control.GameControl;
 import byui.cit260.atRoadTrip1.model.Game;
 import java.util.Scanner;
@@ -72,7 +73,7 @@ public class GameMenuView extends View{
                  this.displayHelpMenu();
                  break;
             case "R": // help menu
-                 this.gameReport();
+                 this.getGameReport();
                  break;
             case "Q": // quit help menu
                 this.displayQuitHelp();
@@ -134,13 +135,13 @@ public class GameMenuView extends View{
         mainMenuView.display();
     }
 
-    private void gameReport() {
+    private void getGameReport() {
      this.console.println("\n\nEnter the file path for where game "
                              + "report is to be printed");
      String filePath = this.getInput();
         
         try {
-            GameControl.gameReport(TripInfoView.getgameReport(), filePath);
+            GameControl.gameReport(TripInfoView.getGameReport(), filePath);
         } catch (Exception ex) {
             ErrorView.display("GameMenuView", ex.getMessage());
         }

@@ -30,7 +30,7 @@ public class TripInfoView extends View{
         
     }
 
-    public static TripInfoView getgameReport() {
+    public static TripInfoView getGameReport() {
         System.out.println("\n"
                   + "\n--------------------------------------"
                   + "\n           List of Trip Info                 "
