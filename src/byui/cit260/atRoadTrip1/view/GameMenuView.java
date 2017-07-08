@@ -5,6 +5,8 @@
  */
 package byui.cit260.atRoadTrip1.view;
 
+import atroadtrip1.AtRoadTrip1;
+import byui.cit260.atRoadTrip1.control.GameControl;
 import byui.cit260.atRoadTrip1.model.Game;
 import java.util.Scanner;
 
@@ -29,6 +31,7 @@ public class GameMenuView extends View{
                   + "\nM - Stop for motel"
                   + "\nS - Save Game"
                   + "\nH - Help Menu"
+                  + "\nR - Print Game Report"
                   + "\nQ - Quit"
                   + "\n--------------------------------------");
     
@@ -67,6 +70,9 @@ public class GameMenuView extends View{
                 break;
             case "H": // help menu
                  this.displayHelpMenu();
+                 break;
+            case "R": // help menu
+                 this.gameReport();
                  break;
             case "Q": // quit help menu
                 this.displayQuitHelp();
@@ -126,6 +132,18 @@ public class GameMenuView extends View{
     private void displayQuitHelp() {
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.display();
+    }
+
+    private void gameReport() {
+     this.console.println("\n\nEnter the file path for where game "
+                             + "report is to be printed");
+     String filePath = this.getInput();
+        
+        try {
+            GameControl.gameReport(TripInfoView.getgameReport(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("GameMenuView", ex.getMessage());
+        }
     }
 }
 

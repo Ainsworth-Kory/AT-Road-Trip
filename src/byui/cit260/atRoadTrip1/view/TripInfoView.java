@@ -11,7 +11,7 @@ import byui.cit260.atRoadTrip1.control.CarControl;
  *
  * @author whitbillman
  */
-public class TripInfoView {
+public class TripInfoView extends View{
     
  /*   public TripInfoView(){ */
         public static void main(String args[]){
@@ -28,6 +28,18 @@ public class TripInfoView {
         int speed;
         
         
+    }
+
+    public static TripInfoView getgameReport() {
+        System.out.println("****getGameReport***");
+            return null;
+        
+         //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

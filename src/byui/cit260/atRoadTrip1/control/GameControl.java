@@ -18,6 +18,7 @@ import byui.cit260.atRoadTrip1.model.Player;
 import byui.cit260.atRoadTrip1.model.RegSceneType;
 import byui.cit260.atRoadTrip1.model.Scene;
 import byui.cit260.atRoadTrip1.model.SceneType;
+import byui.cit260.atRoadTrip1.view.TripInfoView;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -176,6 +177,19 @@ public class GameControl {
             
           //close the output file
           AtRoadTrip1.setCurrentGame(game);
+    }
+    
+     public static void gameReport(TripInfoView gameReport, String filepath)
+        throws GameControlException {
+        
+      try( FileOutputStream fops = new FileOutputStream(filepath)) {
+          ObjectOutputStream output = new ObjectOutputStream(fops);
+          
+           output.writeObject(gameReport); // write the gae object out to file
+      }
+      catch(Exception e){
+          throw new GameControlException(e.getMessage());
+      }
     }
    
 
