@@ -18,7 +18,9 @@ import byui.cit260.atRoadTrip1.model.Player;
 import byui.cit260.atRoadTrip1.model.RegSceneType;
 import byui.cit260.atRoadTrip1.model.Scene;
 import byui.cit260.atRoadTrip1.model.SceneType;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 
@@ -160,8 +162,19 @@ public class GameControl {
       }
     }
 
-    public static void getExisitingGame(String filePath) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static void getExisitingGame(String filepath) 
+                        throws GameControlException {
+            Game game = null;
+            
+            try( FileInputStream fips = new FileInputStream(filepath)) {
+                ObjectInputStream input = new ObjectInputStream(fips);
+            game = (Game) input.readObject(); //read the game object from file
+          } catch(Exception e) {
+              throw new GameControlException(e.getMessage());
+          }
+            
+          //close the output file
+          AtRoadTrip1.setCurrentGame(game);
     }
    
 
