@@ -21,6 +21,9 @@ import byui.cit260.atRoadTrip1.model.Player;
 import byui.cit260.atRoadTrip1.model.Question;
 import byui.cit260.atRoadTrip1.model.RegSceneType;
 import byui.cit260.atRoadTrip1.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -31,6 +34,25 @@ public class AtRoadTrip1 {
     private static Game currentGame = null;
     private static Player player = null;
 
+    private static PrintWriter outFile = null;
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        AtRoadTrip1.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        AtRoadTrip1.inFile = inFile;
+    }
+    private static BufferedReader inFile = null;
+    
      public static Game getCurrentGame() {
         return currentGame;
     }
@@ -50,15 +72,29 @@ public class AtRoadTrip1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+       
+        try {
+            AtRoadTrip1.inFile = 
+                    new BufferedReader(new InputStreamReader(System.in));
+            AtRoadTrip1.outFile = new PrintWriter(System.out, true);
+        } catch (Exception e) {
+            
+            System.out.println("Exception: " + e.toString() +
+                                "\nCause: " + e.getCause() +
+                                 "\nMessage " + e.getMessage());
+                                                           
+            e.printStackTrace();
+        }
         // create StartProgramViewOrig and display the start program view
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
-        try {
+        
+       
             startProgramView.display();
-        } catch (Throwable te){
-            System.out.println(te.getMessage());
-            te.printStackTrace();
+            return;
+                  catch (Throwable e){
+            System.out.println(e.getMessage());
+            e.printStackTrace();
             startProgramView.display();
         }
     }   
