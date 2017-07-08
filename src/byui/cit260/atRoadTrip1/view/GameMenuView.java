@@ -79,7 +79,7 @@ public class GameMenuView extends View{
 }
 
     private void displayTripInfo() {
-        System.out.println("*** displayTripInfo function called ***");
+        this.console.println("*** displayTripInfo function called ***");
     }
 
     private void displayDrive() {
@@ -114,7 +114,7 @@ public class GameMenuView extends View{
     }
 
     private void displaySaveGame() {
-        System.out.println("*** displaySaveGame function called ***");
+        this.console.println("*** displaySaveGame function called ***");
     }
 
     private void displayHelpMenu() {

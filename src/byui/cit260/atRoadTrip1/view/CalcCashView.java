@@ -41,7 +41,7 @@ public class CalcCashView extends View{
 }
 
     private void displayCashRemaining() {
-        System.out.println("\nYou have used $xx.xx and have $xx.xx remaining.");
+      this.console.println("\nYou have used $xx.xx and have $xx.xx remaining.");
                         
     }
 

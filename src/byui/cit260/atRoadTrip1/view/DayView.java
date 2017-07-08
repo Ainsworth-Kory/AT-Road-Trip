@@ -42,7 +42,7 @@ public class DayView extends View{
      }
 
     private void displayDayView() {
-        System.out.println("\n***The Current Day Is...");
+       this.console.println("\n***The Current Day Is...");
     }
         private void displayQuitDayView() {
         GameMenuView gameMenuView = new GameMenuView();

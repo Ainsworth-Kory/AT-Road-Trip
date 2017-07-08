@@ -94,7 +94,7 @@ public class HelpMenuView extends View {
                 this.displayQuitHelp();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try Again");
+                this.console.println("\n*** Invalid Selection *** Try Again");
                rtnValue = false;
                 break;
         }
@@ -108,25 +108,25 @@ public class HelpMenuView extends View {
         helpMenuView.display(); //HelpMenuView
     }
     private void displayGoal() {
-        System.out.println("*** displayGoal function called ***");
+        this.console.println("*** displayGoal function called ***");
     }
 
     private void displayMove() {
-        System.out.println("*** displayMove function called ***"); 
+        this.console.println("*** displayMove function called ***"); 
     }
 
     private void displayEstimateMileage() {
-        System.out.println("*** displayEstimateMileage function called ***");
+        this.console.println("*** displayEstimateMileage function called ***");
         
     }
 
     private void displayHazards() {
-        System.out.println("*** displayHazards function called ***");
+        this.console.println("*** displayHazards function called ***");
         
     }
 
     private void displaySpendMoney() {
-        System.out.println("*** displaySpendMoney function called ***");
+        this.console.println("*** displaySpendMoney function called ***");
        
     }
 

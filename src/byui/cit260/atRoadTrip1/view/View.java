@@ -59,7 +59,7 @@ public abstract class View implements ViewInterface {
         //loop while an invalid value is enter
         while (!valid) { 
             
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
             
             // get the next line typed on the keyboard
             value = this.keyboard.readLine(); 

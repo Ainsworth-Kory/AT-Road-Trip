@@ -155,7 +155,7 @@ public class DriveView extends View{
 
             private void displayBanner() {
         
-        System.out.println(
+        this.console.println(
                 "\n**************************************"
               + "\n*                                    *"
               + "\n*       You're on your way!          *"
@@ -165,7 +165,7 @@ public class DriveView extends View{
     }
               
     private void displaySpeedView() {
-         System.out.println("\n*** displayDriveView() function called ***"
+         this.console.println("\n*** displayDriveView() function called ***"
                         + "\nYou're hitting the road!"
                         );
     }

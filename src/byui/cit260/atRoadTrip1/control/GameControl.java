@@ -140,8 +140,9 @@ public class GameControl {
     }
 
      // Need to implement this stub funtion
+  
     static void assignScenesToLocations(Map map, Scene[] scenes) {
-         System.out.println("\nassignScenesToLocations() called.");
+       System.out.println("\nassignScenesToLocations() called.");
     }
    
 
