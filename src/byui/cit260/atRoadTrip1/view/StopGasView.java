@@ -22,44 +22,7 @@ public class StopGasView extends View{
          this.displayBanner();
 
     }
-    /*
-    public void displayStopGasView() {
-        
-        boolean done = false; // set flag to not done
-       do {
-           // prompt player for yes or no
-           String stopGasOption = this.getStopGasOption();
-        
-           // do the requested action and display the next view
-           done = this.doAction(stopGasOption);
-       
-       } while (!done);
-        
-    }
-        
-    private String getStopGasOption(){
-        
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) { //loop while an invalid value is enter
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get the next line typed on the keyboard
-            value = value.trim(); // trim off the leading and trailing blanks  
-            if (value.length() > 1){ //if the value is too many characters
-                System.out.println("\nInvalid value: you must enter Y or N");
-                continue;
-          }  
-            if (value.length() < 1){ //if the value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-             break; // end the loop
-          }
-            return value; // return the value entered
-}  */
+    
         @Override
         public boolean doAction(String value){        
             

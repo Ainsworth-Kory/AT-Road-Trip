@@ -33,7 +33,7 @@ public class GameMenuView extends View{
                   + "\nS - Save Game"
                   + "\nH - Help Menu"
                   + "\nR - Print Game Report"
-                  + "\nR - Display Trip Info"
+                  + "\nT - Display Trip Info"
                   + "\nQ - Quit"
                   + "\n--------------------------------------");
     

@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author Ian Tabeling
  */
 public class StopMotelView extends View{
-    private String promptMessage;
+    //private String promptMessage;
     
     public StopMotelView(){
         
@@ -23,43 +23,7 @@ public class StopMotelView extends View{
          this.displayBanner();
 
     }
-    /*
-    public void displayStopMotelView() {
-        
-        boolean done = false; // set flag to not done
-       do {
-           // prompt player for yes or no
-           String stopMotelOption = this.getStopMotelOption();
-        
-           // do the requested action and display the next view
-           done = this.doAction(stopMotelOption);
-       
-       } while (!done);
-        
-    }
-    private String getStopMotelOption(){
-        
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) { //loop while an invalid value is enter
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get the next line typed on the keyboard
-            value = value.trim(); // trim off the leading and trailing blanks  
-            if (value.length() > 1){ //if the value is too many characters
-                System.out.println("\nInvalid value: you must enter Y or N");
-                continue;
-          }  
-            if (value.length() < 1){ //if the value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-             break; // end the loop
-          }
-            return value; // return the value entered
- }*/
+    
      @Override
     public boolean doAction(String value){        
             

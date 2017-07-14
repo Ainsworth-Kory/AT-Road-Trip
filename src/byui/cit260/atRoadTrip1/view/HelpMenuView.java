@@ -28,44 +28,6 @@ public class HelpMenuView extends View {
     
     
     }
-    /*
-    * displays the start program view
-    */
-
- /*  public void displayHelpMenuView() {
-         
-       boolean done = false; // set flag to not done
-       do {
-           // prompt player for Help Menu option
-           String helpMenuOption = this.getHelpMenuOption();
-           if (helpMenuOption.toUpperCase().equals("Q")) // user wants to quit game
-               return; // exit the game
-           
-           // do the requested action and disply the next view
-           done = this.doAction(helpMenuOption);
-       
-       } while (!done);
-   }
-    private String getHelpMenuOption() {
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) { //loop while an invalid value is enter
-            System.out.println("\n" + this.menu);
-            
-            value = keyboard.nextLine(); // get the next line typed on the keyboard
-            value = value.trim(); // trim off the leading and trailing blanks
-            
-            if (value.length() < 1){//if the value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-             break; // end the loop
-          }
-            return value; // return the value entered
-    }
-    */ 
     
     @Override
     public boolean doAction(String choice){

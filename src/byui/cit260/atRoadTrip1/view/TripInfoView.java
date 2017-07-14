@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * @author whitbillman
  */
 public class TripInfoView extends View{
-    // This class need the most work
+    // This class need the most work!!
     public TripInfoView(){ 
     /*    public static void main(String args[]){
         TripInfoView tripInfoView = new TripInfoView();
