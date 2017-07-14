@@ -11,7 +11,7 @@ package byui.cit260.atRoadTrip1.view;
  */
 
 public class DoubleView {
- /*
+ /* Not sure what this class is for needs review
   public static void main (String[] args){
 //throws java.io.IOException{ 
        

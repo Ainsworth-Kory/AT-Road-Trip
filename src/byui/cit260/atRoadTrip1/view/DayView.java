@@ -14,9 +14,10 @@ public class DayView extends View{
 
     public DayView(){
         
-         //this.promptMessage = 
+         // implements View superclass to display messsage
                  super("\nDisplay current day Y or N?");
 }
+    // implements View superclass to call doAction function
      @Override
      public boolean doAction(String value){        
             

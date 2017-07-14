@@ -16,10 +16,10 @@ public class DriveView extends View{
     
     public DriveView(){
         
-         // display prompt message 
+         // implements View superclass to diplay message 
          super("\nWhat speed would you like to drive?");
     }
-    
+    // implements View suoperclass to call doAction function
     @Override
      public boolean doAction(String value){        
             

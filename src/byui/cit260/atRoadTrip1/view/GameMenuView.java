@@ -33,6 +33,7 @@ public class GameMenuView extends View{
                   + "\nS - Save Game"
                   + "\nH - Help Menu"
                   + "\nR - Print Game Report"
+                  + "\nR - Display Trip Info"
                   + "\nQ - Quit"
                   + "\n--------------------------------------");
     
@@ -72,8 +73,11 @@ public class GameMenuView extends View{
             case "H": // help menu
                  this.displayHelpMenu();
                  break;
-            case "R": // help menu
+            case "R": // game report
                  this.getGameReport();
+                 break;
+            case "T": // game report
+                 this.displayTripInfo();
                  break;
             case "Q": // quit help menu
                 this.displayQuitHelp();
@@ -85,9 +89,13 @@ public class GameMenuView extends View{
         }
             return rtnValue;
 }
-
+// need to call tripinfo class here
     private void displayTripInfo() {
-        this.console.println("*** displayTripInfo function called ***");
+        //this.console.println("*** displayTripInfo function called ***");
+        
+        TripInfoView tripInfoView = new TripInfoView();
+        tripInfoView.display();
+        
     }
 
     private void displayDrive() {

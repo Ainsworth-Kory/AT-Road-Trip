@@ -12,10 +12,11 @@ package byui.cit260.atRoadTrip1.view;
 public class CalcCashView extends View{
     
     public CalcCashView (){
+        //implements View superclass to display message
                 super("\nWould you like to view your cash remaining? (Y or N)" );
                 
-                //this.displayBanner();
 }
+       // implements View superclass to perform doAction function
        @Override
         public boolean doAction(String value){        
             
@@ -39,7 +40,7 @@ public class CalcCashView extends View{
         }
             return rtnValue;
 }
-
+ // would need a way of returning cash spent to another class
     private void displayCashRemaining() {
       this.console.println("\nYou have used $xx.xx and have $xx.xx remaining.");
                         
