@@ -38,7 +38,7 @@ public class ErrorView {
         logFile.println(className + " - " + errorMessage);
         
     }*/
-
+// need to figure out what this stub function is supposed to do
    public static void display(String _Invalid_Selection__Try_Again) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

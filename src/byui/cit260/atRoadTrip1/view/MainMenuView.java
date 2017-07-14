@@ -16,6 +16,7 @@ import java.util.Scanner;
 public class MainMenuView extends View {
 
     public MainMenuView() {
+        // implements view superclass to display main menu
         super("\n"
                   + "\n--------------------------------------"
                   + "\n            Main Menu                 "
@@ -29,45 +30,7 @@ public class MainMenuView extends View {
     
     }
    
-    /*
-    * displays the start program view
-    */
-
-  /* public void displayMainMenuView() {
-         
-       boolean done = false; // set flag to not done
-       do {
-           // prompt for and get players name
-           String menuOption = this.getMenuOption();
-           if (menuOption.toUpperCase().equals("Q")) // user wants to quit game
-               return; // exit the game
-           
-           // do the requested action and disply the next view
-           done = this.doAction(menuOption);
-       
-       } while (!done);
-   }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) { //loop while an invalid value is enter
-            System.out.println("\n" + this.menu);
-            
-            value = keyboard.nextLine(); // get the next line typed on the keyboard
-            value = value.trim(); // trim off the leading and trailing blanks
-            
-            if (value.length() < 1){//if the value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-             break; // end the loop
-          }
-            return value; // return the value entered
-    }
-*/
+    // uses view supperclass to implement doAction
     @Override
     public boolean doAction(String value){
         

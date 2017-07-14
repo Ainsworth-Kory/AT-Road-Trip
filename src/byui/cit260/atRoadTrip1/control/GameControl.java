@@ -107,7 +107,7 @@ public class GameControl implements Serializable{
     }
     
     
-
+// need to use assignScenesToLocation function
    private static void assignScenesToLocations(Map map, SceneType[] scenes) {
         Location[][] locations = map.getLocations();
         
