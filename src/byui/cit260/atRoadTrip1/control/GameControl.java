@@ -8,14 +8,12 @@ package byui.cit260.atRoadTrip1.control;
 import atroadtrip1.AtRoadTrip1;
 import byui.cit260.atRoadTrip1.exceptions.GameControlException;
 import byui.cit260.atRoadTrip1.model.Car;
-import byui.cit260.atRoadTrip1.model.Day;
 import byui.cit260.atRoadTrip1.model.Game;
 import byui.cit260.atRoadTrip1.model.InventoryItem;
 import byui.cit260.atRoadTrip1.model.Item;
 import byui.cit260.atRoadTrip1.model.Location;
 import byui.cit260.atRoadTrip1.model.Map;
 import byui.cit260.atRoadTrip1.model.Player;
-import byui.cit260.atRoadTrip1.model.RegSceneType;
 import byui.cit260.atRoadTrip1.model.Scene;
 import byui.cit260.atRoadTrip1.model.SceneType;
 import byui.cit260.atRoadTrip1.view.TripInfoView;
@@ -23,6 +21,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 
 /**
@@ -31,7 +30,7 @@ import java.io.ObjectOutputStream;
  */
 
 
-public class GameControl {
+public class GameControl implements Serializable{
     
     public static void createNewGame(Player player){
         
@@ -154,10 +153,10 @@ public class GameControl {
     public static void saveGame(Game game, String filepath)
         throws GameControlException {
         
-      try( FileOutputStream fops = new FileOutputStream(filepath)) {
+      try(FileOutputStream fops = new FileOutputStream(filepath)) {
           ObjectOutputStream output = new ObjectOutputStream(fops);
           
-           output.writeObject(game); // write the gae object out to file
+          output.writeObject(game); // write the gae object out to file
       }
       catch(Exception e){
           throw new GameControlException(e.getMessage());
@@ -165,7 +164,7 @@ public class GameControl {
     }
 
     public static void getExisitingGame(String filepath) 
-                        throws GameControlException {
+            throws GameControlException {
             Game game = null;
             
             try( FileInputStream fips = new FileInputStream(filepath)) {
@@ -182,10 +181,10 @@ public class GameControl {
      public static void gameReport(TripInfoView gameReport, String filepath)
         throws GameControlException {
         
-      try( FileOutputStream fops = new FileOutputStream(filepath)) {
+      try(FileOutputStream fops = new FileOutputStream(filepath)) {
           ObjectOutputStream output = new ObjectOutputStream(fops);
           
-           output.writeObject(gameReport); // write the gae object out to file
+           output.writeObject(gameReport); // write the game object out to file
       }
       catch(Exception e){
           throw new GameControlException(e.getMessage());

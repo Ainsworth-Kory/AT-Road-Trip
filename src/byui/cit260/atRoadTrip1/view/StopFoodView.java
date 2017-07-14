@@ -17,12 +17,15 @@ public class StopFoodView extends View{
     
     public StopFoodView(){
         super ("\nWould you like to buy food? (Y or N)");
+        
+        // the promptMessage is replaced by the super() function above
     /*     this.promptMessage = "\nWould you like to buy food? (Y or N)"; */
-         // display the banner when the view is created
+         
+        // display the banner when the view is created
          this.displayBanner();
 
     }
-    /*
+    
     public void displayStopFoodView() {
         
         boolean done = false; // set flag to not done
@@ -59,7 +62,7 @@ public class StopFoodView extends View{
              break; // end the loop
           }
             return value; // return the value entered
-}  */
+}  
         @Override
         public boolean doAction(String value){        
             

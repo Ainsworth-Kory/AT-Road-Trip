@@ -5,6 +5,7 @@
  */
 package byui.cit260.atRoadTrip1.view;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -13,58 +14,17 @@ import java.util.Scanner;
  */
 public class DriveView extends View{
     
-    //private String promptMessage;
-    
     public DriveView(){
         
-         //this.promptMessage = 
-                 super("\nWhat speed would you like to drive?");
-         // display the banner when the view is created
-         //this.displayBanner();
-
+         // display prompt message 
+         super("\nWhat speed would you like to drive?");
     }
     
-    /*public void displayDriveView() {
-        
-        boolean done = false; // set flag to not done
-       do {
-           // prompt player for yes or no
-           String driveViewOption = this.getDriveViewOption();
-        
-           // do the requested action and display the next view
-           done = this.doAction(driveViewOption);
-       
-       } while (!done);
-        
-    }
-    private String getDriveViewOption(){
-        
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) { //loop while an invalid value is enter
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get the next line typed on the keyboard
-            value = value.trim(); // trim off the leading and trailing blanks  
-            if (value.length() > 105){ //if the value is too many characters
-                System.out.println("\nInvalid value: you must enter a number between 0 and 105");
-                continue;
-          }  
-            if (value.length() < 0){ //if the value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-             break; // end the loop
-          }
-            return value; // return the value entered
- }*/
-    
-     @Override
+    @Override
      public boolean doAction(String value){        
             
         value = value.toUpperCase(); // convert choice to upper case
+        value = value.trim(); // trim extra blank spaces
         
         boolean rtnValue = true;
          switch (value){
@@ -133,8 +93,7 @@ public class DriveView extends View{
                 break;    
              case "105": // Speed int
                 this.displaySpeedView();
-                break;
-          
+                break;         
                 
             case "No": // "sorry my error"
                 this.displayNoDriveView();
@@ -150,24 +109,17 @@ public class DriveView extends View{
                 break;
         }
             return rtnValue;
-     }
-
-
-            private void displayBanner() {
-        
-        this.console.println(
-                "\n**************************************"
-              + "\n*                                    *"
-              + "\n*       You're on your way!          *"
-              + "\n*                                    *"
-              + "\n**************************************"
-        );
-    }
+     }  
               
     private void displaySpeedView() {
-         this.console.println("\n*** displayDriveView() function called ***"
-                        + "\nYou're hitting the road!"
-                        );
+         this.console.println(
+                 "\n**************************************"
+               + "\n*                                    *"
+               + "\n*       You're on your way!          *"
+               + "\n*                                    *"
+               + "\n**************************************"
+         );
+         this.displayQuitDriveView();
     }
 
    

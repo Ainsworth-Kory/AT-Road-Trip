@@ -10,6 +10,7 @@ import byui.cit260.atRoadTrip1.model.Item;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,10 +18,10 @@ import java.io.Writer;
  */
 public class TripInfoView extends View{
     
- /*   public TripInfoView(){ */
-        public static void main(String args[]){
+    public TripInfoView(){ 
+    /*    public static void main(String args[]){
         TripInfoView tripInfoView = new TripInfoView();
-        /*
+        
         for (TripInfoView prevDistance){
             int returnValue = CarControl.int prevDistance;
             if (returnValue < 0){
@@ -29,10 +30,11 @@ public class TripInfoView extends View{
         }
         */
         int prevDistance;
-        int speed;
-        
-        
+        int speed;  
+
+    
     }
+    
 // This is not the correct way to do this should be char stream
     static TripInfoView getGameReport() {
         System.out.println("\n        Inventory Items"
@@ -42,9 +44,45 @@ public class TripInfoView extends View{
                                + "\n Time             30 hours"
                                + "\n Distance         2000 miles"); //To change body of generated methods, choose Tools | Templates.
             return null;
+    }    
+            
+/*    
+    public ArrayList<Item> addInventoryItems(){
+        // create an ArrayList of items in the inventory
+        ArrayList<Item> inventory = new ArrayList<>();
+        
+        // adding objects to the ArrayList
+        inventory.add(new Item ("Car", 1));
+        inventory.add(new Item ("Cash", 500));
+        inventory.add(new Item ("Time", 30));
+        inventory.add(new Item ("Distance", 2000));
+        
+        return inventory;        
     }
-// This is my attempt at char stream but would not work
-  /*  public static TripInfoView getGameReport(String outputLocation) {
+     
+    // Attempt to modify inventory (Trip Info) report - Ainsworth
+    public void printTripInfoReport(ArrayList<Item> inventory, String outputLocation){
+        
+        // create BufferReader object for input file
+        try (PrintWriter out = new PrintWriter(outputLocation)) {
+            
+            // print title and column headings
+            out.println("\n\n          Trip Info Report          ");
+            out.printf("%n%-20s%10s", "Item", "Quantity");
+            out.printf("%n%-20s%10s", "----", "--------");
+            
+            // print the description and quantity of each item
+            for(Item item : inventory){
+                out.printf("%n%-20s%10s",item.getDescription()
+                                        ,item.getQuantity());
+            }                     
+       } catch (Exception e){
+           ErrorView.display("I/O Error: ");
+       }           
+    }*/
+    
+    // This is my attempt at char stream but would not work
+      /*  public static TripInfoView getGameReport(String outputLocation) {
        try (PrintWriter out = new PrintWriter(outputLocation)) {
        
               out.println("\n\n     Game Report               ");
