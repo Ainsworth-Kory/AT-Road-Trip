@@ -33,7 +33,6 @@ public class GameMenuView extends View{
                   + "\nS - Save Game"
                   + "\nH - Help Menu"
                   + "\nR - Print Game Report"
-                  + "\nT - Display Trip Info"
                   + "\nQ - Quit"
                   + "\n--------------------------------------");
     
@@ -75,9 +74,6 @@ public class GameMenuView extends View{
                  break;
             case "R": // game report
                  this.getGameReport();
-                 break;
-            case "T": // game report
-                 this.displayTripInfo();
                  break;
             case "Q": // quit help menu
                 this.displayQuitHelp();
