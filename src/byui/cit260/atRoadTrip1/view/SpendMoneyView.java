@@ -37,7 +37,7 @@ public class SpendMoneyView extends View{
               + "\n* Gas mileage is dependent on speed                     *"
               + "\n*                                                       *"
               + "\n* Moral of the story:                                   *"
-              + "\n*  Don't eat and sleep too much and don't speed                *"
+              + "\n*  Don't eat and sleep too much and don't speed         *"
               + "\n---------------------------------------------------------"
               ); 
     }
