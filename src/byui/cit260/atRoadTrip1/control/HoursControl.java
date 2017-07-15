@@ -5,25 +5,30 @@
  */
 package byui.cit260.atRoadTrip1.control;
 
+import byui.cit260.atRoadTrip1.exceptions.HoursControlException;
+
 /**
  *
  * @author whitbillman
  */
 public class HoursControl {
     
-    public int calcCurrentHour (int prevHour, int timeUsed) {
+    public int calcCurrentHour (int prevHour, int timeUsed) throws HoursControlException {
    
             if (prevHour < 0) { // This is an entry error
-                return -222;
+                throw new HoursControlException("Previous hour must be greater than 0.");
+               
            
             }
     
             if (prevHour > 2400) { 
-                return -333;
+                throw new HoursControlException("Previous hour must be less than 2400.");
+              
             }
             
             if(timeUsed < 0){
-                return -444;
+                throw new HoursControlException("Previous time used must be greater than 0.");
+                
             }
             
             int currentHour = prevHour + (timeUsed * 100);

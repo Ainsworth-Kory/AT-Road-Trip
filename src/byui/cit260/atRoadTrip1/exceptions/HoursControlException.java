@@ -9,25 +9,25 @@ package byui.cit260.atRoadTrip1.exceptions;
  *
  * @author Ian Tabeling
  */
-public class DayControlException extends Exception{
-
-    public DayControlException() {
+public class HoursControlException extends Exception{
+    public HoursControlException() {
     }
 
-    public DayControlException(String string) {
+    public HoursControlException(String string) {
         super(string);
     }
 
-    public DayControlException(String string, Throwable thrwbl) {
+    public HoursControlException(String string, Throwable thrwbl) {
         super(string, thrwbl);
     }
 
-    public DayControlException(Throwable thrwbl) {
+    public HoursControlException(Throwable thrwbl) {
         super(thrwbl);
     }
 
-    public DayControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
+    public HoursControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
         super(string, thrwbl, bln, bln1);
     }
+    
     
 }
