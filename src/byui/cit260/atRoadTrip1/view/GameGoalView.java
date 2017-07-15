@@ -21,7 +21,7 @@ public class GameGoalView extends View{
     private void displayBanner() {
         this.console.println(
                 "\n--------------------------------------------------"
-              + "\n           Road Trip Game Goals                   "
+              + "\n             Rules of the Road                    "
               + "\n--------------------------------------------------"
               + "\n* Hello! Here are the rules of the road          *"
               + "\n*                                                *"
