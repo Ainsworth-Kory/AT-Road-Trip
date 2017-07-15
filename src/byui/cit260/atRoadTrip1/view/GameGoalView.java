@@ -12,7 +12,7 @@ package byui.cit260.atRoadTrip1.view;
 public class GameGoalView extends View{
 
     public GameGoalView(){
-        super ("\nWould you like to know the goals of the game? (Y or N)");
+        super ("\nPress 'H' to return to Help Menu or 'Q' to return to Main Menu");
    
          this.displayBanner();
 
@@ -20,22 +20,24 @@ public class GameGoalView extends View{
     
     private void displayBanner() {
         this.console.println(
-                "\n*************************************************"
-              + "\n*           Road Trip Game Goals                *                             *"
-              + "\n*************************************************"
-              + "\n* Hello! Are you ready to start your road trip? *" 
-              + "\n* You must reach your destination within 30     *"
-              + "\n* hours in order to win the game, so you need   *"
-              + "\n* to calculate the time, the distance, how much *"
-              + "\n* gas you'll need, and how much money you'll    *"
-              + "\n* spend along the way. Use your money wisely so *" 
-              + "\n* you don't run out of gas or food. If you make *"
-              + "\n* it in time and still have money and gas, you  *"
-              + "\n* win the game.                                 *"
-              + "\n*                                               *"
-              + "\n* So pack up and let's hit the road!            *"
-              + "\n*                                               *"
-              + "\n*************************************************"
+                "\n--------------------------------------------------"
+              + "\n           Road Trip Game Goals                   "
+              + "\n--------------------------------------------------"
+              + "\n* Hello! Here are the rules of the road          *"
+              + "\n*                                                *"
+              + "\n* Drive 2,000 miles within 30 hours.             *"
+              + "\n*                                                *"          
+              + "\n* You must have at least $1 remaining            *"
+              + "\n*                                                *"
+              + "\n* Must have at least 1 gallon of gas remaining   *"
+              + "\n*                                                *" 
+              + "\n* You start with $500 and a full tank of gas     *"
+              + "\n*                                                *"
+              + "\n* You are responsible for tracking cash used     *"
+              + "\n*                                                *"
+              + "\n* So pack up and let's hit the road!             *"
+              + "\n*                                                *"
+              + "\n--------------------------------------------------"
               ); 
     }
     @Override
@@ -44,7 +46,7 @@ public class GameGoalView extends View{
         
         boolean rtnValue = true;
          switch (value){
-            case "G": // return 
+            case "H": // return 
                 this.displayHelpMenu();
                 break;
             case "Q": // quit and return to game menu
