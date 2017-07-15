@@ -18,7 +18,7 @@ public class HelpMenuView extends View {
                   + "\n--------------------------------------"
                   + "\n              Help Menu               "
                   + "\n--------------------------------------"
-                  + "\nG - What is the goal of the game ?"
+                  + "\nG - What is the goal of the game ?    "
                   + "\nM - How to move"
                   + "\nE - Estimating mileage (mpg)"
                   + "\nH - Hazards"
@@ -86,15 +86,17 @@ public class HelpMenuView extends View {
     }
 
     private void displayHazards() {
-        // display GameGoal View
+        // display Hazards View
          HazardsView hazardsView = new HazardsView();
         hazardsView.display(); 
-        //this.console.println("*** displayHazards function called ***");
+        
         
     }
 
     private void displaySpendMoney() {
-        this.console.println("*** displaySpendMoney function called ***");
+         // display Spend Money View
+         SpendMoneyView spendMoneyView = new SpendMoneyView();
+        spendMoneyView.display(); 
        
     }
 
