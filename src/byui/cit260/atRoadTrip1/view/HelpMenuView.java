@@ -73,7 +73,7 @@ public class HelpMenuView extends View {
         // display GameGoal View
          GameGoalView gameGoalView = new GameGoalView();
         gameGoalView.display(); 
-        //this.console.println("*** displayGoal function called ***");
+       
     }
 
     private void displayMove() {
@@ -86,7 +86,10 @@ public class HelpMenuView extends View {
     }
 
     private void displayHazards() {
-        this.console.println("*** displayHazards function called ***");
+        // display GameGoal View
+         HazardsView hazardsView = new HazardsView();
+        hazardsView.display(); 
+        //this.console.println("*** displayHazards function called ***");
         
     }
 
