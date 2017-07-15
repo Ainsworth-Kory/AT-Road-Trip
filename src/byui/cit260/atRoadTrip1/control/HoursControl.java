@@ -16,8 +16,7 @@ public class HoursControl {
     public int calcCurrentHour (int prevHour, int timeUsed) throws HoursControlException {
    
             if (prevHour < 0) { // This is an entry error
-                throw new HoursControlException("Previous hour must be greater than 0.");
-               
+                throw new HoursControlException("Previous hour must be greater than 0.");   
            
             }
     
@@ -37,6 +36,4 @@ public class HoursControl {
     }
             
             //if (prevHour + (timeUsed * 100) < 2400) 
-            
-        
 }
