@@ -16,7 +16,7 @@ public class DriveView extends View{
     
     public DriveView(){
         
-         // implements View superclass to diplay message 
+         // implements View superclass to display message 
          super("\nWhat speed would you like to drive?");
     }
     // implements View suoperclass to call doAction function

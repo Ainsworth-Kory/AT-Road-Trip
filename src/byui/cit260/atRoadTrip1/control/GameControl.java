@@ -16,12 +16,16 @@ import byui.cit260.atRoadTrip1.model.Map;
 import byui.cit260.atRoadTrip1.model.Player;
 import byui.cit260.atRoadTrip1.model.Scene;
 import byui.cit260.atRoadTrip1.model.SceneType;
+import byui.cit260.atRoadTrip1.view.ErrorView;
 import byui.cit260.atRoadTrip1.view.TripInfoView;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.io.Serializable;
+import static java.lang.System.console;
+import java.util.ArrayList;
 
 
 /**
@@ -34,26 +38,26 @@ public class GameControl implements Serializable{
     
     public static void createNewGame(Player player){
         
-         Game game = new Game();// create new game
-         AtRoadTrip1.setCurrentGame(game);
+        Game game = new Game();// create new game
+        AtRoadTrip1.setCurrentGame(game);
          
-         game.setPlayer(player);  // save player in game 
+        game.setPlayer(player);  // save player in game 
          
-         // create the inventory list and save in the game
-         InventoryItem[] inventoryList = GameControl.createInventoryList();
-         game.setInventory(inventoryList);
-         
-         Car car = new Car();//create new car
-         game.setCar(car);// save car in game
+        Car car = new Car();//create new car
+        game.setCar(car);// save car in game
+        
+        // create inventory list and save in game
+        InventoryItem[] inventoryList = GameControl.createInventoryList();
+        game.setInventory(inventoryList);
          
          // *******commented out 7/8/17********
          /*Day day = new Day();// create new day
          game.setDay(day);// save day in game
          */
-         Map map = MapControl.createMap();//create and initialize new map
-         game.setMap(map); //save map in game
+        Map map = MapControl.createMap();//create and initialize new map
+        game.setMap(map); //save map in game
     
-        MapControl.moveActorsToStartingLocation(map);  
+        MapControl.moveActorsToStartingLocation(map);
     }
 
     
@@ -83,29 +87,48 @@ public class GameControl implements Serializable{
         gas.setInvType("Gas");
         gas.setQtyInStock(10);
         gas.setReqAmt(10);
-        inventory[Item.gas.ordinal()] = gas;
+        inventory[0] = gas;
         
         InventoryItem cash = new InventoryItem();
         cash.setInvType("Cash");
         cash.setQtyInStock(500);
         cash.setReqAmt(500);
-        inventory[Item.cash.ordinal()] = cash;
+        inventory[1] = cash;
         
         InventoryItem time = new InventoryItem();
         time.setInvType("Time");
         time.setQtyInStock(30);
         time.setReqAmt(30);
-        inventory[Item.time.ordinal()] = time;
+        inventory[2] = time;
         
         InventoryItem distance = new InventoryItem();
         distance.setInvType("Distance");
         distance.setQtyInStock(2000);
         distance.setReqAmt(2000);
-        inventory[Item.distance.ordinal()] = distance;        
+        inventory[3] = distance;        
         
         return inventory;         
     }
     
+    public void printTripInfoReport(ArrayList<Item> inventory, String outputLocation){
+   
+        // create BufferReader object for input file
+        try (PrintWriter out = new PrintWriter(outputLocation)) {
+            
+            // print title and column headings
+            out.println("\n\n          Trip Info Report          ");
+            out.printf("%n%-20s%10s", "Item", "Quantity");
+            out.printf("%n%-20s%10s", "----", "--------");
+            
+            // print the description and quantity of each item
+            for(Item item : inventory){
+                out.printf("%n%-20s%10s",item.getInvType()
+                                        ,item.getQuantity());
+            }                     
+       } catch (Exception e){
+           ErrorView.display("I/O Error: ");
+       }
+    }
     
 // need to use assignScenesToLocation function
    private static void assignScenesToLocations(Map map, SceneType[] scenes) {
@@ -156,7 +179,7 @@ public class GameControl implements Serializable{
       try(FileOutputStream fops = new FileOutputStream(filepath)) {
           ObjectOutputStream output = new ObjectOutputStream(fops);
           
-          output.writeObject(game); // write the gae object out to file
+          output.writeObject(game); // write the game object out to file
       }
       catch(Exception e){
           throw new GameControlException(e.getMessage());
@@ -190,7 +213,4 @@ public class GameControl implements Serializable{
           throw new GameControlException(e.getMessage());
       }
     }
-   
-
-   
 }

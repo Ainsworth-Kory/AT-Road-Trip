@@ -6,7 +6,7 @@
 package byui.cit260.atRoadTrip1.view;
 
 import atroadtrip1.AtRoadTrip1;
-import static atroadtrip1.AtRoadTrip1.getgameReport;
+import static atroadtrip1.AtRoadTrip1.getGameReport;
 import byui.cit260.atRoadTrip1.control.GameControl;
 import byui.cit260.atRoadTrip1.model.Game;
 import java.util.Scanner;
@@ -140,7 +140,8 @@ public class GameMenuView extends View{
     }
 
     private void getGameReport() {
-     this.console.println("\n\nEnter the file path for where game "
+        this.console.println("*** getGameReport function called ***");
+/*     this.console.println("\n\nEnter the file path for where game "
                              + "report is to be printed");
      String filePath = this.getInput();
         
@@ -148,7 +149,7 @@ public class GameMenuView extends View{
             GameControl.gameReport(TripInfoView.getGameReport(), filePath);
         } catch (Exception ex) {
             ErrorView.display("GameMenuView", ex.getMessage());
-        }
+        } */ 
     }
 }
 

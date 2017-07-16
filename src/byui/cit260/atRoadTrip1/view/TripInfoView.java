@@ -6,122 +6,113 @@
 package byui.cit260.atRoadTrip1.view;
 
 import byui.cit260.atRoadTrip1.control.CarControl;
+import byui.cit260.atRoadTrip1.control.GameControl;
+import byui.cit260.atRoadTrip1.model.Car;
+import byui.cit260.atRoadTrip1.model.InventoryItem;
 import byui.cit260.atRoadTrip1.model.Item;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author whitbillman
  */
 public class TripInfoView extends View{
-    // This class need the most work!!
-    public TripInfoView(){ 
-    /*    public static void main(String args[]){
-        TripInfoView tripInfoView = new TripInfoView();
-        
-        for (TripInfoView prevDistance){
-            int returnValue = CarControl.int prevDistance;
-            if (returnValue < 0){
-                System.out.println("\nERROR: Previous distance or previous speed must be greater than 0.");
-            }
-        }
-        */
-        int prevDistance;
-        int speed;  
-
     
+    private String promptMessage;
+    
+    public TripInfoView(){
+        
+         // implements View superclass to display message         
+        super ("\nWould you like to see Trip Info? (Y or N)");
+        
     }
     
-// This is not the correct way to do this should be char stream
-    static TripInfoView getGameReport() {
-        System.out.println("\n        Inventory Items"
-                             + "\nDescription      Quantity"
-                              + " \n Car              One"
-                                + "\nCash             $500"
-                               + "\n Time             30 hours"
-                               + "\n Distance         2000 miles"); //To change body of generated methods, choose Tools | Templates.
-            return null;
-    }    
-            
-/*    
-    public ArrayList<Item> addInventoryItems(){
-        // create an ArrayList of items in the inventory
-        ArrayList<Item> inventory = new ArrayList<>();
+    public void displayTripInfoView() {
         
-        // adding objects to the ArrayList
-        inventory.add(new Item ("Car", 1));
-        inventory.add(new Item ("Cash", 500));
-        inventory.add(new Item ("Time", 30));
-        inventory.add(new Item ("Distance", 2000));
-        
-        return inventory;        
-    }
-     
-    // Attempt to modify inventory (Trip Info) report - Ainsworth
-    public void printTripInfoReport(ArrayList<Item> inventory, String outputLocation){
-        
-        // create BufferReader object for input file
-        try (PrintWriter out = new PrintWriter(outputLocation)) {
-            
-            // print title and column headings
-            out.println("\n\n          Trip Info Report          ");
-            out.printf("%n%-20s%10s", "Item", "Quantity");
-            out.printf("%n%-20s%10s", "----", "--------");
-            
-            // print the description and quantity of each item
-            for(Item item : inventory){
-                out.printf("%n%-20s%10s",item.getDescription()
-                                        ,item.getQuantity());
-            }                     
-       } catch (Exception e){
-           ErrorView.display("I/O Error: ");
-       }           
-    }*/
-    
-    // This is my attempt at char stream but would not work
-      /*  public static TripInfoView getGameReport(String outputLocation) {
-       try (PrintWriter out = new PrintWriter(outputLocation)) {
+        boolean done = false; // set flag to not done
+       do {
+           // prompt player for yes or no
+           String tripInfoOption = this.getTripInfoOption();
+           
+           // do the requested action and display the next view
+           done = this.doAction(tripInfoOption);
        
-              out.println("\n\n     Game Report               ");
-               out.printf("%n%-20s%10s%10s", "List of", "Inventory", "Items");
-                out.printf("%n%-20s%10s%10s", "Gas", "Cash", "Time", "Distance");
-                
-       } catch (Exception e){
-           ErrorView.display("I/O Error: ");
-       }
-            return null;
-           
-    }*/
+       } while (!done);
         
-         //To change body of generated methods, choose Tools | Templates.
-/*
-    static TripInfoView getGameReport(String outputLocation) {
+    }
+        
+    private String getTripInfoOption(){
+        
+        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
+        
+        while (!valid) { //loop while an invalid value is enter
+            System.out.println("\n" + this.promptMessage);
             
-       try (PrintWriter out = new PrintWriter(outputLocation)) {
-              // print title and column headings
-              out.println("\n\n     List of Inventory Items      ");
-               out.printf("%n%-20s%10s", "Description", "Quantity");
-                out.printf("%n%-20s%10s", "----------", "--------");
-          for (Item item : inventoryItem){
-              out.printf("%n%-20s%7d", item.getDescripton()
-                                      , item.getQuntity());
-          }      
-       } catch (Exception e){
-           ErrorView.display("I/O Error: ");
-       }
-            return null;
-           
-    }*/
-    
-    @Override
-    public boolean doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  
+            value = keyboard.nextLine(); // get the next line typed on the keyboard
+            value = value.trim(); // trim off the leading and trailing blanks  
+            if (value.length() > 1){ //if the value is too many characters
+                System.out.println("\nInvalid value: you must enter Y or N");
+                continue;
+          }  
+            if (value.length() < 1){ //if the value is blank
+                System.out.println("\nInvalid value: value cannot be blank");
+                continue;
+            }
+             break; // end the loop
+          }
+            return value; // return the value entered
+}  
+        @Override
+        public boolean doAction(String value){        
+            
+        value = value.toUpperCase(); // convert choice to upper case
+        
+        boolean rtnValue = true;
+         switch (value){
+            case "Y": // Yes buy food
+                this.displayShowInfo();
+                break;
+            case "N": // No do not buy food and return to game menu
+                this.displayNoInfo();
+                break; 
+            case "Q": // quit and return to game menu
+                this.displayQuitInfoView();
+                break;
+            default:
+                this.console.println("\n*** Invalid Selection *** Try Again");
+               rtnValue = false;
+                break;
+        }
+            return rtnValue;
+}
+     
+    private void displayShowInfo() {
+        this.console.println(
+                "\n***********************************"
+              + "\n*                                 *"
+              + "\n*     Welcome to Trip Info!       *"
+              + "\n*     Check your dashboard.       *"
+              + "\n***********************************"
+        );
+        this.displayQuitInfoView();
     }
 
+    // send the player back to the game menu if they do not want to buy food
+    private void displayNoInfo() {
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
+    }
+
+    private void displayQuitInfoView() {
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
+    }
 }
     
     

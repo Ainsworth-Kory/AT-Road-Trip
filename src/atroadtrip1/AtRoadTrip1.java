@@ -136,7 +136,7 @@ public class AtRoadTrip1 {
     /*public static void setPlayer(Player player) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.*/
 // need to use this function to getgameReport (should be getGameReport??
-    public static Game getgameReport() {
+    public static Game getGameReport() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
