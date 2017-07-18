@@ -37,26 +37,26 @@ public class InventoryControl {
     /*
     * @author Ian Tabeling
     */
-   public double calcCashUsed (double previousCash, double gasCost, double foodCost, double motelCost, double fineCost) {
+   public double calcCashUsed (double previousCash, double gasCost, double foodCost, double motelCost, double fineCost) throws InventoryControlException{
     
        if (previousCash < 0){
-           return -666;
+           throw new InventoryControlException("Previous cash cannot be less than 0"); 
        }
        
        if (gasCost > 499){
-           return -5555;
+           throw new InventoryControlException("Cost cannot exceed 499");
        }
        
        if (motelCost > 499) {
-           return -6666 ;
+           throw new InventoryControlException("Cost cannot exceed 499");
        }
              
        if (previousCash > 500){
-           return -777;
+           throw new InventoryControlException("Previous cash cannot be greater than 500");
        }
        
        if (foodCost > 499){
-           return -7777;
+           throw new InventoryControlException("Cost cannot exceed 499");
        }
            
        double cashUsed = gasCost + foodCost + motelCost + fineCost;
@@ -68,14 +68,14 @@ public class InventoryControl {
     /*
     * @author Kory Ainsworth
     */
-   public int calcTimeUsed (int previousTime, int timeUsed) {
+   public int calcTimeUsed (int previousTime, int timeUsed) throws InventoryControlException{
     
        if (previousTime < 0){
-           return -11;
+           throw new InventoryControlException("Previous time cannot be less than 0");
        }
        
        if (timeUsed < 0 || timeUsed > 1) {
-           return -22 ;
+           throw new InventoryControlException("Time used must be 1");
        }
              
                 
@@ -87,10 +87,10 @@ public class InventoryControl {
    /*
     * @author Kory Ainsworth
     */
-   public double calcGasCost (double remainGas) {
+   public double calcGasCost (double remainGas) throws InventoryControlException {
     
        if (remainGas <= 0){
-           return -33;
+           throw new InventoryControlException("Gas remaining must be greater than or equal to 1");
        }
                 
        double purchGas = 10 - remainGas;
