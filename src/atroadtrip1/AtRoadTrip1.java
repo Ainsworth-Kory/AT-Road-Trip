@@ -31,7 +31,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author IanandJenna
+ * @author Ian Tabeling
  */
 public class AtRoadTrip1 {
     
